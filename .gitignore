@@ -1,0 +1,15 @@
+# Nothing secret should ever exist here (ADR-0001), but belt and braces:
+.env
+.env.local
+*.key
+
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# marimo scratch (session snapshots under __marimo__ ARE committed — see ADR-0005)
+.marimo.toml
+
+# macOS
+.DS_Store
