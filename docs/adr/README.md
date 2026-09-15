@@ -2,7 +2,7 @@
 
 # Architecture decision records
 
-7 record(s). Status is sourced from each ADR's frontmatter; last-edited from git.
+8 record(s). Status is sourced from each ADR's frontmatter; last-edited from git.
 
 | ADR | Title | Status | Last edited |
 | --- | --- | --- | --- |
@@ -13,3 +13,4 @@
 | 0005 | [Session snapshots are committed so molab serves a pre-rendered notebook](0005-commit-session-snapshots-for-molab-previews.md) | accepted | 2026-09-14 |
 | 0006 | [A portability budget for notebooks — a soft guideline, not a gate](0006-portability-budget-for-notebooks.md) | accepted | 2026-09-14 |
 | 0007 | [Notebooks are named `cw_<feature>_<goal>.py`](0007-notebook-naming-convention.md) | accepted | 2026-09-14 |
+| 0008 | [Every notebook opens with the same branded header](0008-branded-header-on-every-notebook.md) | accepted | 2026-09-14 |
