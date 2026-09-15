@@ -199,8 +199,27 @@ def _(mo):
         The catalog is available from the API, so it is current at the time you call it.
 
         ```python
+        import os
+
+        # the OpenAI SDK, pointed at CoreWeave instead of OpenAI
+        from openai import OpenAI
+
+        # your W&B API key, from wandb.ai/authorize
+        WANDB_API_KEY = os.environ["WANDB_API_KEY"]
+
+        client = OpenAI(
+            # Inference has its own host, separate from the W&B API
+            base_url="https://api.inference.wandb.ai/v1",
+            # the same W&B key authenticates inference
+            api_key=WANDB_API_KEY,
+            # optional: attributes the spend to a team and project
+            project="<team>/<project>",
+        )
+
+        # the catalog, as the API has it right now
         models = client.models.list()
 
+        # each entry carries the model string you pass as model=
         for m in models.data:
             print(m.id)
         ```
@@ -224,23 +243,19 @@ def _(mo):
         ---
         ## 2. Run an inference
 
-        The whole thing, end to end: an OpenAI chat completions request against the inference base URL, with your W&B key.
+        With the client from section 1, a request is the OpenAI chat completions call, unchanged:
 
         ```python
-        WANDB_API_KEY = os.environ["WANDB_API_KEY"]
-
-        client = OpenAI(
-            base_url="https://api.inference.wandb.ai/v1",
-            api_key=WANDB_API_KEY,
-            project="<team>/<project>",
-        )
-
         resp = client.chat.completions.create(
+            # any model string from the catalog above
             model="meta-llama/Llama-3.3-70B-Instruct",
+            # the conversation so far, oldest first
             messages=[{"role": "user", "content": "Why is the sky blue?"}],
+            # the ceiling on what the model may generate in reply
             max_tokens=600,
         )
 
+        # the reply itself; usage and finish_reason come back alongside it
         print(resp.choices[0].message.content)
         ```
 
@@ -251,7 +266,7 @@ def _(mo):
 
         When using a reasoning model, allow enough tokens for the reasoning field *and* the reply. At least 600 is a reasonable floor, which is the default below.
 
-        Reasoning models spend tokens thinking before answering, and that thinking is returned in a separate `reasoning` field rather than in `content`. Set `max_tokens` too low and the budget is consumed by reasoning: `content` comes back empty with `finish_reason: "length"`. It is not an error, so nothing will flag it.
+        Reasoning models spend tokens thinking before answering, and that thinking is returned in a separate `reasoning` field rather than in `content`. If you set `max_tokens` too low, the budget is consumed by reasoning: `content` comes back empty with `finish_reason: "length"`.
 
         `openai/gpt-oss-120b` is a reasoning model. The dropdown is ordered non-reasoning-first.
         ///
@@ -424,7 +439,7 @@ def _(mo):
         ---
         ## 4. Move to dedicated capacity
 
-        Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Take the client from section 2 and point it at your own endpoint:
+        Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Take the client from section 1 and point it at your own endpoint:
 
         ```python
         # your own dedicated endpoint, same call sites
