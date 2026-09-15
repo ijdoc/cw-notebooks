@@ -54,7 +54,7 @@ The header is **copied, not imported** ([ADR-0002](../adr/0002-one-directory-per
 
 Gate everything downstream on the key with `mo.stop`, so a reader who has not filled the form sees a prompt rather than a stack trace.
 
-Where a notebook traces to Weave, pass `project="<team>/<project>"` to the `OpenAI` client, built from the entity and project in the form. Both parts are required, so report the tracking status in the connection callout at the top rather than leaving the reader to discover at the bottom that nothing was logged. **Traces land in the reader's own project and nowhere else** ([ADR-0001](../adr/0001-no-customer-or-private-information-ever.md)). Say so in the notebook.
+Where a notebook traces to Weave, **`weave.init("<team>/<project>")` is what produces traces** by patching the OpenAI client. The `project=` argument on the client is usage attribution and traces nothing on its own; pass both. `weave` authenticates from `WANDB_API_KEY` in the environment, so set it from the form before calling `init`, wrap the call in a try/except (a mistyped team raises), and report the status in the connection callout at the top rather than leaving the reader to find out at the bottom that nothing was logged. **Traces land in the reader's own project and nowhere else** ([ADR-0001](../adr/0001-no-customer-or-private-information-ever.md)). Say so in the notebook.
 
 Two things follow from collecting credentials in the UI. The key is never written to the file and never appears in a committed session snapshot, which is the point. But a headless `marimo export session` has no key either, so a gated notebook produces a thin preview showing only the form. That is the accepted trade against [ADR-0005](../adr/0005-commit-session-snapshots-for-molab-previews.md).
 

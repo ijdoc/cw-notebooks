@@ -3,6 +3,7 @@
 # dependencies = [
 #     "marimo",
 #     "openai>=1.40",
+#     "weave",
 # ]
 # ///
 """CoreWeave Serverless Inference: first run.
@@ -128,7 +129,10 @@ def _(mo):
 
 
 @app.cell
-def _(UI_API_KEY, UI_ENTITY, UI_PROJECT, mo):
+def _(UI_API_KEY, UI_BASE_URL, UI_ENTITY, UI_PROJECT, mo):
+    import os
+
+    import weave
     from openai import OpenAI
 
     mo.stop(not UI_API_KEY.value)
@@ -138,24 +142,42 @@ def _(UI_API_KEY, UI_ENTITY, UI_PROJECT, mo):
 
     _entity = UI_ENTITY.value.strip()
     _project = UI_PROJECT.value.strip()
-    tracing_on = bool(_entity and _project)
+    _target = f"{_entity}/{_project}" if (_entity and _project) else None
+
+    # weave authenticates from the environment, not from an argument.
+    os.environ["WANDB_API_KEY"] = UI_API_KEY.value
+    if UI_BASE_URL.value.strip():
+        os.environ["WANDB_BASE_URL"] = UI_BASE_URL.value.strip()
+
+    # weave.init patches the OpenAI client, which is what produces traces.
+    # The project= argument below is usage attribution and does not trace.
+    tracing_on = False
+    _tracing_error = None
+    if _target:
+        try:
+            weave.init(_target)
+            tracing_on = True
+        except Exception as _e:
+            _tracing_error = f"{type(_e).__name__}: {_e}"
 
     client = OpenAI(
         base_url=INFERENCE_BASE_URL,
         api_key=UI_API_KEY.value,
-        # Team and project for usage tracking. Requires both parts.
-        project=f"{_entity}/{_project}" if tracing_on else None,
+        project=_target,
     )
 
-    mo.md(
-        f"Connected to `{INFERENCE_BASE_URL}`. "
-        + (
-            f"Usage is tracked under `{_entity}/{_project}`."
-            if tracing_on
-            else "**Tracking is off.** Fill in both team and project above to turn it on."
-        )
-    ).callout(kind="success" if tracing_on else "warn")
-    return INFERENCE_BASE_URL, OpenAI, client, tracing_on
+    if tracing_on:
+        _status = f"Tracing to Weave under `{_target}`."
+        _kind = "success"
+    elif _tracing_error:
+        _status = f"**Weave tracing failed:** `{_tracing_error}`"
+        _kind = "danger"
+    else:
+        _status = "**Tracing is off.** Fill in both team and project above to turn it on."
+        _kind = "warn"
+
+    mo.md(f"Connected to `{INFERENCE_BASE_URL}`. {_status}").callout(kind=_kind)
+    return INFERENCE_BASE_URL, OpenAI, client, os, tracing_on, weave
 
 
 @app.cell(hide_code=True)
@@ -402,6 +424,40 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        """
+        ---
+        ## 5. Trace calls to Weave
+
+        Two separate things are involved here, and only the first produces traces. `weave.init` patches the OpenAI client, so every call made afterwards is logged with its inputs, outputs, token counts, latency and cost. The `project` argument on the client is usage attribution: it tags spend, and on its own it traces nothing.
+
+        ```python
+        import os
+        import weave
+        from openai import OpenAI
+
+        # weave authenticates from the environment, not from an argument
+        os.environ["WANDB_API_KEY"] = WANDB_API_KEY
+
+        # 1. Tracing. Patches the OpenAI client, so calls below are logged.
+        weave.init("<team>/<project>")
+
+        client = OpenAI(
+            base_url="https://api.inference.wandb.ai/v1",
+            api_key=WANDB_API_KEY,
+            # 2. Usage attribution. Tags spend, does not trace.
+            project="<team>/<project>",
+        )
+        ```
+
+        `weave` is declared in this notebook's inline dependencies, so it is already installed. In your own project, `pip install weave`.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
 def _(UI_BASE_URL, UI_ENTITY, UI_PROJECT, mo, tracing_on):
     _entity = UI_ENTITY.value.strip()
     _project = UI_PROJECT.value.strip()
@@ -411,15 +467,11 @@ def _(UI_BASE_URL, UI_ENTITY, UI_PROJECT, mo, tracing_on):
     )
 
     mo.md(
-        "### Tracing\n\n"
-        + (
-            f"Calls from this notebook are logged to Weave under `{_entity}/{_project}`, "
-            f"with traces, token counts and costs.\n\n"
-            f"[See traces &#8594;]({_app}/{_entity}/{_project}/weave/traces)"
-            if tracing_on
-            else "Enter a team and a project in the form at the top to log calls to Weave."
-        )
-    )
+        f"Every call above is logged under `{_entity}/{_project}`.\n\n"
+        f"[Open in Weave &#8594;]({_app}/{_entity}/{_project}/weave)"
+        if tracing_on
+        else "Enter a team and a project in the form at the top to log calls to Weave."
+    ).callout(kind="success" if tracing_on else "warn")
     return
 
 
