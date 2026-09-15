@@ -353,7 +353,15 @@ def _(mo):
         ---
         ## 3. Compare cost and latency
 
-        This sends the same prompt to each selected model and times it. Every column in the table is a field of the response you saw in section 2: `prompt tokens` and `completion tokens` are `usage.prompt_tokens` and `usage.completion_tokens`, the counts you are billed on, and `finish` is `choices[0].finish_reason` (`stop` for a complete answer, `length` for one cut off at `max_tokens`). `seconds` is wall-clock time measured around the call rather than anything the API returns, and `tokens/sec` is `usage.completion_tokens` divided by it. Per-token prices are on the [pricing page](https://wandb.ai/site/pricing/inference).
+        This sends the same prompt to each selected model and times it. Every column in the table comes from the response you saw in section 2:
+
+        - `seconds`: wall-clock time measured around the call, not something the API returns.
+        - `prompt tokens`: `usage.prompt_tokens`, what your prompt cost to send.
+        - `completion tokens`: `usage.completion_tokens`, what the model generated in reply.
+        - `tokens/sec`: `usage.completion_tokens` divided by `seconds`.
+        - `finish`: `choices[0].finish_reason`. `stop` is a complete answer, `length` is one cut off at `max_tokens`.
+
+        Both token counts are what you are billed on. Per-token prices are on the [pricing page](https://wandb.ai/site/pricing/inference).
         """
     )
     return
