@@ -1,4 +1,4 @@
-<!-- generated — do not edit. Run _harness/scripts/generate-adr-log.py -->
+<!-- generated — do not edit. Run scripts/generate-adr-log.py -->
 
 # Architecture decision records
 
