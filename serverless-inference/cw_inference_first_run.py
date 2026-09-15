@@ -446,12 +446,16 @@ def _(mo):
         client = OpenAI(
             base_url="https://api.inference.wandb.ai/v1",
             api_key=WANDB_API_KEY,
-            # 2. Usage attribution. Tags spend, does not trace.
+            # 2. Usage attribution.
             project="<team>/<project>",
         )
         ```
 
-        `weave` is declared in this notebook's inline dependencies, so it is already installed. In your own project, `pip install weave`.
+        `weave` is declared in this notebook's inline dependencies, so it is already installed. In your own project run:
+
+        ```sh
+        pip install weave
+        ```
         """
     )
     return
