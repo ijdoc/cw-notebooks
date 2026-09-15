@@ -197,6 +197,13 @@ def _(mo):
         ## 1. List the available models
 
         The catalog is available from the API, so it is current at the time you call it.
+
+        ```python
+        models = client.models.list()
+
+        for m in models.data:
+            print(m.id)
+        ```
         """
     )
     return
@@ -215,9 +222,29 @@ def _(mo):
     mo.md(
         """
         ---
-        ## 2. Switch models
+        ## 2. Run an inference
 
-        Every model in the catalog takes the same request shape and returns the same response shape. Pick one and send a prompt.
+        The whole thing, end to end: an OpenAI chat completions request against the inference base URL, with your W&B key.
+
+        ```python
+        WANDB_API_KEY = os.environ["WANDB_API_KEY"]
+
+        client = OpenAI(
+            base_url="https://api.inference.wandb.ai/v1",
+            api_key=WANDB_API_KEY,
+            project="<team>/<project>",
+        )
+
+        resp = client.chat.completions.create(
+            model="meta-llama/Llama-3.3-70B-Instruct",
+            messages=[{"role": "user", "content": "Why is the sky blue?"}],
+            max_tokens=600,
+        )
+
+        print(resp.choices[0].message.content)
+        ```
+
+        Every model in the catalog takes that same request shape and returns the same response shape, so moving between them is a one-string change. Pick one below and send a prompt.
 
         /// admonition | Reasoning models need a larger max_tokens
             type: warn
@@ -311,7 +338,7 @@ def _(mo):
         ---
         ## 3. Compare cost and latency
 
-        This sends the same prompt to each selected model and reports token counts and wall-clock time. Per-token prices are on the [pricing page](https://wandb.ai/site/pricing/inference).
+        This sends the same prompt to each selected model and times it. Every column in the table is a field of the response you saw in section 2: `prompt tokens` and `completion tokens` are `usage.prompt_tokens` and `usage.completion_tokens`, the counts you are billed on, and `finish` is `choices[0].finish_reason` (`stop` for a complete answer, `length` for one cut off at `max_tokens`). `seconds` is wall-clock time measured around the call rather than anything the API returns, and `tokens/sec` is `usage.completion_tokens` divided by it. Per-token prices are on the [pricing page](https://wandb.ai/site/pricing/inference).
         """
     )
     return
@@ -397,19 +424,10 @@ def _(mo):
         ---
         ## 4. Move to dedicated capacity
 
-        Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Moving to it means changing the base URL:
+        Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Take the client from section 2 and point it at your own endpoint:
 
         ```python
-        WANDB_API_KEY = os.environ["WANDB_API_KEY"]
-
-        # today: serverless, per-token
-        client = OpenAI(
-            base_url="https://api.inference.wandb.ai/v1",
-            api_key=WANDB_API_KEY,
-            project="<team>/<project>",
-        )
-
-        # later: your own dedicated endpoint, same call sites
+        # your own dedicated endpoint, same call sites
         client = OpenAI(
             base_url="https://<your-endpoint>.inference.coreweave.com/v1",
             api_key=WANDB_API_KEY,
@@ -417,7 +435,7 @@ def _(mo):
         )
         ```
 
-        The rest of the code is unchanged.
+        That base URL is the only line that changes. The requests, the response handling and the model strings stay exactly as they are above.
         """
     )
     return
