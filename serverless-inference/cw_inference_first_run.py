@@ -11,7 +11,7 @@ Open-weight models behind an OpenAI-compatible endpoint, billed per token, with
 no capacity commitment. Runnable by anyone with a CoreWeave / W&B API key:
 
     export WANDB_API_KEY="<key from wandb.ai/authorize>"
-    uvx marimo edit --sandbox getting_started.py
+    uvx marimo edit --sandbox cw_inference_first_run.py
 
 Dependencies are declared inline (PEP 723), so --sandbox resolves them itself;
 nothing needs installing first.
@@ -539,10 +539,10 @@ def _(mo):
 
         ```sh
         export WANDB_API_KEY="<your key from wandb.ai/authorize>"
-        uvx marimo edit --sandbox getting_started.py
+        uvx marimo edit --sandbox cw_inference_first_run.py
         ```
 
-        `--sandbox` reads the dependency list from the top of this file and builds its own environment, so there is nothing to install and nothing to conflict with what you already have. (`uv run getting_started.py` also works, but runs it headlessly as a plain script rather than opening the notebook.)
+        `--sandbox` reads the dependency list from the top of this file and builds its own environment, so there is nothing to install and nothing to conflict with what you already have. (`uv run cw_inference_first_run.py` also works, but runs it headlessly as a plain script rather than opening the notebook.)
 
         - **Keys** — [wandb.ai/authorize](https://wandb.ai/authorize)
         - **Model catalog and pricing** — [wandb.ai/site/pricing/inference](https://wandb.ai/site/pricing/inference)

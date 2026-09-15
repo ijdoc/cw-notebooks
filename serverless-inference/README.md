@@ -1,12 +1,12 @@
 # Serverless Inference — getting started
 
-[![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/ijdoc/cw-notebooks/blob/main/serverless-inference/getting_started.py)
+[![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/ijdoc/cw-notebooks/blob/main/serverless-inference/cw_inference_first_run.py)
 
 Open-weight models behind an OpenAI-compatible endpoint, billed per token, with no capacity commitment and nothing to provision. Five sections, roughly two minutes each.
 
 ```sh
 export WANDB_API_KEY="<your key from wandb.ai/authorize>"
-uvx marimo edit --sandbox getting_started.py
+uvx marimo edit --sandbox cw_inference_first_run.py
 ```
 
 ## What it covers

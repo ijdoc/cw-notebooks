@@ -4,7 +4,7 @@ Runnable notebook demos for the CoreWeave portfolio — open-weight inference, e
 
 | Demo | What it shows | |
 |---|---|---|
-| [Serverless Inference — getting started](serverless-inference/) | Live model catalog, one-string model swaps, schema-enforced extraction (including a failure worth seeing), measured cost and latency, and the one-line move to dedicated capacity | [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/ijdoc/cw-notebooks/blob/main/serverless-inference/getting_started.py) |
+| [Serverless Inference — getting started](serverless-inference/) | Live model catalog, one-string model swaps, schema-enforced extraction (including a failure worth seeing), measured cost and latency, and the one-line move to dedicated capacity | [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/ijdoc/cw-notebooks/blob/main/serverless-inference/cw_inference_first_run.py) |
 
 ## Running a notebook
 
@@ -12,7 +12,7 @@ Notebooks are [marimo](https://marimo.io) notebooks — plain Python files with 
 
 ```sh
 export WANDB_API_KEY="<your key from wandb.ai/authorize>"
-uvx marimo edit --sandbox serverless-inference/getting_started.py
+uvx marimo edit --sandbox serverless-inference/cw_inference_first_run.py
 ```
 
 Requires [uv](https://docs.astral.sh/uv/). Or click the molab badge and run it in your browser with no local setup at all.
