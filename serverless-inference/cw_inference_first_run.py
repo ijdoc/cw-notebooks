@@ -54,7 +54,7 @@ def _(mo):
     mo.md(
         """
 
-        **What this is.** Open-weight models behind an OpenAI-compatible endpoint, billed per token, with no capacity commitment and nothing to provision. If you can call OpenAI today, you can call this in one line of changed code.
+        Open-weight models behind an OpenAI-compatible endpoint, billed per token, with no capacity commitment. The API is the OpenAI API with a different base URL and key.
 
 
         """
@@ -187,9 +187,9 @@ def _(mo):
     mo.md(
         """
         ---
-        ## 1. The model catalog is an API call, not a slide
+        ## 1. List the available models
 
-        Ask us "what models do you have?" and any answer we *email* you is stale by the time you read it. Ask the endpoint instead. This list is live right now.
+        The catalog is available from the API, so it is current at the time you call it.
         """
     )
     return
@@ -220,9 +220,9 @@ def _(mo):
     mo.md(
         """
         ---
-        ## 2. Switching models is a one-string change
+        ## 2. Switch models
 
-        This is the part that matters for a team that doesn't want to be locked in. Same request shape, same response shape, different weights. Pick one and send something.
+        Every model in the catalog takes the same request shape and returns the same response shape. Pick one and send a prompt.
         """
     )
     return
@@ -296,12 +296,12 @@ def _(client, mo, model_picker, prompt_box, send_button, time):
 def _(mo):
     mo.md(
         """
-        /// admonition | One real gotcha, worth knowing before you hit it
+        /// admonition | Reasoning models and max_tokens
             type: warn
 
         Some of these models are **reasoning** models. `gpt-oss-120b` is one. They spend tokens thinking before they answer, and that thinking comes back in a separate `reasoning` field rather than in `content`. If you set `max_tokens` too low, the budget is consumed by reasoning and **`content` comes back empty with `finish_reason: "length"`**. Not an error, just nothing.
 
-        Two ways to not get bitten: give reasoning models room (600+ tokens), or pick a non-reasoning model when you want a direct answer. The dropdown above is ordered non-reasoning-first for exactly this reason.
+        Either give reasoning models room (600+ tokens) or pick a non-reasoning model. The dropdown is ordered non-reasoning-first.
         ///
         """
     )
@@ -313,15 +313,13 @@ def _(mo):
     mo.md(
         """
         ---
-        ## 3. A document becomes a row
+        ## 3. Extract structured data from a document
 
-        This is where inference stops being a chat toy. You hand it unstructured text and a schema, and you get back JSON that validates every time, because the schema is enforced during generation rather than hoped for in the prompt.
+        Given a JSON schema, the model returns JSON conforming to it. The schema is enforced during generation rather than requested in the prompt.
 
-        For a document-heavy operation this is the whole game: procedures, findings, supplier submittals and inspection reports go in; queryable rows come out.
+        **The text below is synthetic**, written for this demo. It resembles a nonconformance report but describes nothing real. Replace it with your own text and re-run.
 
-        **The text below is synthetic**, written for this demo. It resembles a nonconformance report but describes nothing real. Paste something of your own over it and re-run; that is a better demo than anything prepared in advance.
-
-        Run it with the default extraction instruction first, and **watch the `disposition` field**.
+        Run it with the default extraction instruction first and watch the `disposition` field.
         """
     )
     return
@@ -465,17 +463,13 @@ def _(SYSTEM_PROMPTS, client, doc_box, extract_button, mo, prompt_picker):
 def _(mo):
     mo.md(
         """
-        ### The schema guarantees the shape. It does not guarantee the truth.
+        ### The schema constrains the shape, not the content
 
-        That miss is not a bug and it is not a bad model. It is the actual failure mode of extraction on quality and compliance documents, and it is worth thirty seconds of your attention because **the JSON was perfectly valid while being wrong**. Nothing downstream would have flagged it. A dashboard would have shown a clean row.
+        The document states that USE-AS-IS was **rejected** and REWORK recommended. The default instruction, "extract exactly as written", returns `USE_AS_IS`. The JSON is valid against the schema and the value is wrong, so no downstream validation would catch it.
 
-        The document says the disposition was *rejected* and something else recommended. The obvious instruction, "extract exactly as written", walks straight into it, deterministically, every single time.
+        Switch the instruction to **Negation-aware** above and re-run. Same model, same schema, same document, correct answer. Both results are deterministic at `temperature=0`.
 
-        Now switch the instruction to **Negation-aware** above and re-run. Same model, same schema, same document; correct answer, also every time.
-
-        **The point of the whole exercise:** the difference between those two prompts is not something you reason your way to at a whiteboard. You find it by *evaluating*: running both against a set of documents where you already know the answer, and measuring. That is what Weave is for, and it is why we would rather show you this than a slide where everything works.
-
-        The practical sequence for a regulated workload: label thirty documents by hand, make those the evaluation set, and let prompt and model changes compete against it. Then the number you report to an auditor has something behind it.
+        Which of the two prompts is correct is established by testing them against documents whose answers are already known, not by reading them. That is what an evaluation set is for: label a sample by hand, then measure prompt and model changes against it. Weave runs and tracks those evaluations.
         """
     )
     return
@@ -486,11 +480,9 @@ def _(mo):
     mo.md(
         """
         ---
-        ## 4. Cost and latency you can measure yourself
+        ## 4. Compare cost and latency
 
-        You shouldn't have to take our pricing slide's word for your unit economics. Run your own prompt across a few models and read the numbers off your own workload.
-
-        This sends the same prompt to each selected model and reports tokens and wall-clock time. **Per-token prices are published at [the pricing page](https://wandb.ai/site/pricing/inference)**. Multiply by your own volume rather than by ours.
+        This sends the same prompt to each selected model and reports token counts and wall-clock time. Per-token prices are published on the [pricing page](https://wandb.ai/site/pricing/inference).
         """
     )
     return
@@ -574,11 +566,9 @@ def _(mo):
     mo.md(
         """
         ---
-        ## 5. The same code moves to dedicated capacity
+        ## 5. Move to dedicated capacity
 
-        This is the argument for starting on serverless rather than waiting.
-
-        When your volume justifies committed capacity (dedicated endpoints, your own model, predictable throughput), the migration is the **two arguments you already changed**. Not a rewrite, not a new SDK, not a re-architecture:
+        Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Moving to it means changing the base URL:
 
         ```python
         # today: serverless, per-token, no commitment
@@ -594,11 +584,11 @@ def _(mo):
         )
         ```
 
-        Everything above this cell keeps working unchanged. That is the point: **starting on serverless costs you nothing in rework**, so the capacity conversation can take as long as it needs to take.
+        The rest of the code is unchanged.
 
         ### Tracing
 
-        If you filled in the team and project at the top, every call in this notebook has already been logged to Weave, where you can see traces, token costs and evaluations. It is one header, with no change at the call site:
+        If you entered a team and project at the top, calls from this notebook are logged to Weave, with traces, token counts and costs. It is one header, with no change at the call site:
 
         ```python
         client = OpenAI(
@@ -608,9 +598,7 @@ def _(mo):
         )
         ```
 
-        Those traces are in your own project. Nothing from this notebook is reported anywhere else.
-
-        Worth turning on early: it is how you answer "which prompt change made this worse" three months from now.
+        Traces go to your project only. Nothing from this notebook is reported anywhere else.
         """
     )
     return
@@ -621,7 +609,7 @@ def _(mo):
     mo.md(
         """
         ---
-        ## Take this with you
+        ## Running this elsewhere
 
         This notebook is a single Python file with its dependencies declared inline. To run it anywhere:
 
@@ -637,7 +625,7 @@ def _(mo):
         - **Model catalog and pricing**: [wandb.ai/site/pricing/inference](https://wandb.ai/site/pricing/inference)
         - **API reference**: OpenAI-compatible, anything the OpenAI Python client does, this endpoint does
 
-        **Known limit, so you hear it from us first:** Serverless Inference is **text-to-text only** today. If part of your workload is images, scanned drawings or PDFs-as-images, that part does not run here yet. Tell us and we will scope it properly rather than let you discover it in week three.
+        **Limit:** Serverless Inference is text-to-text only. Images, scanned documents and PDFs-as-images are not supported.
         """
     )
     return
