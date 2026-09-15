@@ -14,12 +14,12 @@ This repo is public and read by customers. Before anything else, read [ADR-0001]
 
 ## The header cell
 
-Every notebook opens with the same header ([ADR-0009](../adr/0009-header-is-plain-markdown.md)): a CoreWeave wordmark, the title, and one line carrying the product's own description and a link to its page. **Plain markdown, deliberately** — it renders identically in the editor, in app mode, in slide mode and in a molab preview, with nothing to verify per surface.
+Every notebook opens with the same header ([ADR-0009](../adr/0009-header-is-plain-markdown.md)): a CoreWeave wordmark, the title, and a "Read more" link to the product page. **Plain markdown, deliberately.** It renders identically in the editor, in app mode, in slide mode and in a molab preview, with nothing to verify per surface.
 
 Set the app title alongside the width:
 
 ```python
-app = marimo.App(width="medium", app_title="CoreWeave <Product> — <goal>")
+app = marimo.App(width="medium", app_title="CoreWeave <Product>: <goal>")
 ```
 
 Then, as the first cell after the `import marimo as mo` cell:
@@ -27,27 +27,38 @@ Then, as the first cell after the `import marimo as mo` cell:
 ```python
 @app.cell(hide_code=True)
 def _(mo):
-    # Standard CoreWeave notebook header — see docs/adr/0009. Plain markdown,
+    # Standard CoreWeave notebook header. See docs/adr/0009. Plain markdown,
     # so it renders the same in the editor, in app mode and in slide mode.
     # Copy verbatim into a new notebook; change only the title line and link.
     mo.md(
         """
         <img src="https://cdn.prod.website-files.com/62ba1fb86485b6d5029975c4/69de8e8600c3f18e49d4bf47_logo.svg" width="360" alt="CoreWeave" />
 
-        # Serverless Inference — first run
+        # Serverless Inference: first run
 
-        Run leading open-source models or your own LoRA weights with one API call.
-        [coreweave.com/products/serverless-inference](https://coreweave.com/products/serverless-inference)
+        [Read more &#8594;](https://coreweave.com/products/serverless-inference)
         """
     )
     return
 ```
 
-Change the title line, the description and the link. Leave the rest alone.
-
-**The description is quoted from the product's public page**, not written fresh — if ours and marketing's disagree, the customer can check, and theirs wins. Re-read the page when revising a notebook.
+Change the title line and the link. Leave the rest alone.
 
 The header is **copied, not imported** ([ADR-0002](../adr/0002-one-directory-per-demo.md)): a notebook has to survive being delivered on its own. Duplication is the intended cost.
+
+## Credentials
+
+**Never ask the reader to export an environment variable.** Credentials are collected in the notebook, through the standard form: `WANDB_BASE_URL`, `WANDB_API_KEY` (as `kind="password"`), `WANDB_ENTITY` and `WANDB_PROJECT`, laid out with `mo.vstack` and `mo.hstack` and rendered with `.callout()`. Copy it from `serverless-inference/cw_inference_first_run.py`.
+
+Gate everything downstream on the key with `mo.stop`, so a reader who has not filled the form sees a prompt rather than a stack trace.
+
+Where a notebook traces to Weave, the entity and project come from that form and the `OpenAI-Project` header is only sent when both are filled. **Traces land in the reader's own project and nowhere else** ([ADR-0001](../adr/0001-no-customer-or-private-information-ever.md)). Say so in the notebook.
+
+Two things follow from collecting credentials in the UI. The key is never written to the file and never appears in a committed session snapshot, which is the point. But a headless `marimo export session` has no key either, so a gated notebook produces a thin preview showing only the form. That is the accepted trade against [ADR-0005](../adr/0005-commit-session-snapshots-for-molab-previews.md).
+
+## Prose style
+
+**No em dashes.** Use a colon, a full stop, a comma or parentheses. This applies to notebook prose, READMEs and this guide. ADR narratives already written are frozen and keep theirs.
 
 ## Writing style inside a notebook
 

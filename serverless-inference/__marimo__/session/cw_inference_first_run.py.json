@@ -20,12 +20,12 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "13f2d12e2a678ac27a00598404258f9e",
+      "code_hash": "23fd9f211d6938507beacc1814abc96c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><img src=\"https://cdn.prod.website-files.com/62ba1fb86485b6d5029975c4/69de8e8600c3f18e49d4bf47_logo.svg\" width=\"360\" alt=\"CoreWeave\" /></span>\n<h1 id=\"serverless-inference-first-run\">Serverless Inference \u2014 first run</h1>\n<span class=\"paragraph\">Run leading open-source models or your own LoRA weights with one API call.\n<a href=\"https://coreweave.com/products/serverless-inference\" rel=\"noopener noreferrer\" target=\"_blank\">coreweave.com/products/serverless-inference</a></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><img src=\"https://cdn.prod.website-files.com/62ba1fb86485b6d5029975c4/69de8e8600c3f18e49d4bf47_logo.svg\" width=\"360\" alt=\"CoreWeave\" /></span>\n<h1 id=\"serverless-inference-first-run\">Serverless Inference: first run</h1>\n<span class=\"paragraph\"><a href=\"https://coreweave.com/products/serverless-inference\" rel=\"noopener noreferrer\" target=\"_blank\">Read more &#8594;</a></span></span>"
           }
         }
       ],
@@ -33,12 +33,12 @@
     },
     {
       "id": "vblA",
-      "code_hash": "6bbb19f237b336799d9243c4ec9538ff",
+      "code_hash": "38ea0c18ea111fc4512862fd215c2128",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>What this is.</strong> Open-weight models behind an OpenAI-compatible endpoint, billed per token, with no capacity commitment and nothing to provision. If you can call OpenAI today, you can call this in one line of changed code.</span>\n<span class=\"paragraph\"><strong>Why start here rather than with reserved capacity.</strong> Committed GPU capacity is a real conversation and often the right destination \u2014 but it is not the fastest way to get a team building. This gets your engineers running against open-weight models today, and the code written here is the <em>same code</em> that later points at dedicated capacity. None of it is thrown away.</span>\n<span class=\"paragraph\">Five things, about two minutes each.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>What this is.</strong> Open-weight models behind an OpenAI-compatible endpoint, billed per token, with no capacity commitment and nothing to provision. If you can call OpenAI today, you can call this in one line of changed code.</span></span>"
           }
         }
       ],
@@ -46,12 +46,12 @@
     },
     {
       "id": "bkHC",
-      "code_hash": "9775c97f19fd72fa2d863ad220c2d281",
+      "code_hash": "87d2010d97cce53632abd131adff6bb0",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-callout-output data-html='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eKey loaded from the environment. Endpoint: &#92;u003ccode&#92;u003ehttps://api.inference.wandb.ai/v1&#92;u003c/code&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-kind='&quot;success&quot;'></marimo-callout-output>"
+            "text/html": "<marimo-callout-output data-html='&quot;&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 1rem&#x27;&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e\ud83d\udd12 Enter your W&amp;amp;B credentials, and project settings.&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 2rem&#x27;&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-0&#x27; random-id=&#x27;b98ea313-3d42-b7b8-9d62-2f79f11c5e71&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;https://api.wandb.ai&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_BASE_URL&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;https://api.wandb.ai&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eDedicated and on-prem customers will need to modify &#92;u003ccode&#92;u003eUI_BASE_URL&#92;u003c/code&#92;u003e to match their custom domain&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-1&#x27; random-id=&#x27;3e348c9c-e518-0bc1-6b52-fe873712ed37&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_API_KEY&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;********&amp;quot;&#x27; data-kind=&#x27;&amp;quot;password&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eDon&#x27;t have an API key? &#92;u003ca href=&#92;&quot;https://wandb.ai/authorize&#92;&quot; rel=&#92;&quot;noopener noreferrer&#92;&quot; target=&#92;&quot;_blank&#92;&quot;&#92;u003eCreate one here&#92;u003c/a&#92;u003e&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 2rem&#x27;&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-2&#x27; random-id=&#x27;c386dec0-5a2c-214f-2064-3c44ef7e1c02&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_ENTITY&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;my_awesome_team&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eThe team&#x27;s name (default team will be used when left blank)&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;flex: 1&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-3&#x27; random-id=&#x27;5529d993-add5-20ef-ac08-5477c72546bf&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;cw-inference-first-run&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_PROJECT&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;my_awesome_project&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&quot;' data-kind='&quot;neutral&quot;'></marimo-callout-output>"
           }
         }
       ],
@@ -59,12 +59,12 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "2c116da57f77f68c8f60a6d565e272e2",
+      "code_hash": "d1455c406bb5a84620db94d16b562b80",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/html": "<marimo-callout-output data-html='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eEnter your API key above to continue.&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-kind='&quot;warn&quot;'></marimo-callout-output>"
           }
         }
       ],
@@ -85,12 +85,12 @@
     },
     {
       "id": "Xref",
-      "code_hash": "3bf9204171dd484ac8684f0c28c472e2",
+      "code_hash": "eda1d05880445d412915f4dd76474aa2",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"1-the-model-catalog-is-an-api-call-not-a-slide\">1. The model catalog is an API call, not a slide</h2>\n<span class=\"paragraph\">Ask us \"what models do you have?\" and any answer we <em>email</em> you is stale by the time you read it. Ask the endpoint instead \u2014 this list is live right now.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"1-the-model-catalog-is-an-api-call-not-a-slide\">1. The model catalog is an API call, not a slide</h2>\n<span class=\"paragraph\">Ask us \"what models do you have?\" and any answer we <em>email</em> you is stale by the time you read it. Ask the endpoint instead. This list is live right now.</span></span>"
           }
         }
       ],
@@ -101,10 +101,10 @@
       "code_hash": "c5efc150323116e8afe0c851de011ca1",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>28 models available</strong></span></span><marimo-ui-element object-id='SFPL-0' random-id='273c3f71-35bf-47a7-9d91-632f95600af2'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;model&#92;&quot;:&#92;&quot;JetBrains/Mellum2-12B-A2.5B-Instruct&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;JetBrains&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;MiniMaxAI/MiniMax-M3&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;MiniMaxAI&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;OpenPipe/Qwen3-14B-Instruct&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;OpenPipe&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;Qwen/Qwen3-235B-A22B-Instruct-2507&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;Qwen&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;Qwen/Qwen3-30B-A3B-Instruct-2507&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;Qwen&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;Qwen/Qwen3.5-35B-A3B&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;Qwen&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;Qwen/Qwen3.6-27B&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;Qwen&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;Qwen/Qwen3.6-35B-A3B&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;Qwen&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;Qwen/Qwen3.8-27B&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;Qwen&#92;&quot;},{&#92;&quot;model&#92;&quot;:&#92;&quot;deepseek-ai/DeepSeek-V3.1&#92;&quot;,&#92;&quot;publisher&#92;&quot;:&#92;&quot;deepseek-ai&#92;&quot;}]&quot;' data-total-rows='28' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-show-filters='false' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div>"
-          }
+          "type": "error",
+          "ename": "ancestor-stopped",
+          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
+          "traceback": []
         }
       ],
       "console": []
@@ -127,35 +127,35 @@
       "code_hash": "81f28439ea813029dac4a86b87b024ff",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='RGSE-0' random-id='c9521660-ca29-5cf4-8042-80dccb4bae66'><marimo-dropdown data-initial-value='[&quot;meta-llama/Llama-3.3-70B-Instruct&quot;]' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eModel&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;meta-llama/Llama-3.3-70B-Instruct&quot;,&quot;Qwen/Qwen3-235B-A22B-Instruct-2507&quot;,&quot;deepseek-ai/DeepSeek-V3.1&quot;,&quot;moonshotai/Kimi-K2.6&quot;,&quot;openai/gpt-oss-120b&quot;,&quot;JetBrains/Mellum2-12B-A2.5B-Instruct&quot;,&quot;MiniMaxAI/MiniMax-M3&quot;,&quot;OpenPipe/Qwen3-14B-Instruct&quot;,&quot;Qwen/Qwen3-30B-A3B-Instruct-2507&quot;,&quot;Qwen/Qwen3.5-35B-A3B&quot;,&quot;Qwen/Qwen3.6-27B&quot;,&quot;Qwen/Qwen3.6-35B-A3B&quot;,&quot;Qwen/Qwen3.8-27B&quot;,&quot;deepseek-ai/DeepSeek-V4-Flash&quot;,&quot;deepseek-ai/DeepSeek-V4-Flash-0731&quot;,&quot;deepseek-ai/DeepSeek-V4-Pro&quot;,&quot;deepseek-ai/DeepSeek-V4-Pro-0813&quot;,&quot;google/gemma-4-31B-it&quot;,&quot;ibm-granite/granite-4.1-8b&quot;,&quot;ibm-granite/granite-4.2-8b&quot;,&quot;meta-llama/Llama-3.1-70B-Instruct&quot;,&quot;meta-llama/Llama-3.1-8B-Instruct&quot;,&quot;moonshotai/Kimi-K2.7-Code&quot;,&quot;nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B&quot;,&quot;nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B&quot;,&quot;openai/gpt-oss-20b&quot;,&quot;zai-org/GLM-5.2&quot;,&quot;zai-org/GLM-5.3-Flash&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false' data-disabled='false'></marimo-dropdown></marimo-ui-element><marimo-ui-element object-id='RGSE-1' random-id='b0372c65-3545-2e4c-96dc-6e7c2ca56b50'><marimo-text-area data-initial-value='&quot;In two sentences, explain what a material certification is and why it matters when accepting a supplier shipment.&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ePrompt&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-placeholder='&quot;&quot;' data-disabled='false' data-debounce='true' data-full-width='true' data-rows='3'></marimo-text-area></marimo-ui-element><marimo-ui-element object-id='RGSE-2' random-id='d1fbd7ee-ea7c-81db-ab61-931806551521'><marimo-button data-initial-value='0' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eSend&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div>"
-          }
+          "type": "error",
+          "ename": "ancestor-stopped",
+          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
+          "traceback": []
         }
       ],
       "console": []
     },
     {
       "id": "Kclp",
-      "code_hash": "06d4e236bfd00ca1d3f3c9f4d14db449",
+      "code_hash": "28c1b5fa0c1f7b8f041e6675ec4781d1",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>Press <strong>Send</strong>.</em></span></span>"
-          }
+          "type": "error",
+          "ename": "ancestor-stopped",
+          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
+          "traceback": []
         }
       ],
       "console": []
     },
     {
       "id": "emfo",
-      "code_hash": "b52337f546b9e5953cf1963383376f08",
+      "code_hash": "cbb02692f51e338bc8c5ea8d5ad03c92",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"admonition warn\">\n<span class=\"admonition-title\">One real gotcha, worth knowing before you hit it</span>\n<span class=\"paragraph\">Some of these models are <strong>reasoning</strong> models \u2014 <code>gpt-oss-120b</code> is one. They spend tokens thinking before they answer, and that thinking comes back in a separate <code>reasoning</code> field rather than in <code>content</code>. If you set <code>max_tokens</code> too low, the budget is consumed by reasoning and <strong><code>content</code> comes back empty with <code>finish_reason: \"length\"</code></strong> \u2014 not an error, just nothing.</span>\n<span class=\"paragraph\">Two ways to not get bitten: give reasoning models room (600+ tokens), or pick a non-reasoning model when you want a direct answer. The dropdown above is ordered non-reasoning-first for exactly this reason.</span>\n</div></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"admonition warn\">\n<span class=\"admonition-title\">One real gotcha, worth knowing before you hit it</span>\n<span class=\"paragraph\">Some of these models are <strong>reasoning</strong> models. <code>gpt-oss-120b</code> is one. They spend tokens thinking before they answer, and that thinking comes back in a separate <code>reasoning</code> field rather than in <code>content</code>. If you set <code>max_tokens</code> too low, the budget is consumed by reasoning and <strong><code>content</code> comes back empty with <code>finish_reason: \"length\"</code></strong>. Not an error, just nothing.</span>\n<span class=\"paragraph\">Two ways to not get bitten: give reasoning models room (600+ tokens), or pick a non-reasoning model when you want a direct answer. The dropdown above is ordered non-reasoning-first for exactly this reason.</span>\n</div></span>"
           }
         }
       ],
@@ -163,12 +163,12 @@
     },
     {
       "id": "Hstk",
-      "code_hash": "5ad257cfdfe4b0cfb106ab0f058f1441",
+      "code_hash": "c6429668933cdd3718ac693dacfbd570",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"3-a-document-becomes-a-row\">3. A document becomes a row</h2>\n<span class=\"paragraph\">This is where inference stops being a chat toy. You hand it unstructured text and a schema, and you get back JSON that validates \u2014 every time, because the schema is enforced during generation rather than hoped for in the prompt.</span>\n<span class=\"paragraph\">For a document-heavy operation this is the whole game: procedures, findings, supplier submittals and inspection reports go in; queryable rows come out.</span>\n<span class=\"paragraph\"><strong>The text below is synthetic</strong> \u2014 written for this demo. It resembles a nonconformance report but describes nothing real. Paste something of your own over it and re-run; that is a better demo than anything prepared in advance.</span>\n<span class=\"paragraph\">Run it with the default extraction instruction first, and <strong>watch the <code>disposition</code> field</strong>.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"3-a-document-becomes-a-row\">3. A document becomes a row</h2>\n<span class=\"paragraph\">This is where inference stops being a chat toy. You hand it unstructured text and a schema, and you get back JSON that validates every time, because the schema is enforced during generation rather than hoped for in the prompt.</span>\n<span class=\"paragraph\">For a document-heavy operation this is the whole game: procedures, findings, supplier submittals and inspection reports go in; queryable rows come out.</span>\n<span class=\"paragraph\"><strong>The text below is synthetic</strong>, written for this demo. It resembles a nonconformance report but describes nothing real. Paste something of your own over it and re-run; that is a better demo than anything prepared in advance.</span>\n<span class=\"paragraph\">Run it with the default extraction instruction first, and <strong>watch the <code>disposition</code> field</strong>.</span></span>"
           }
         }
       ],
@@ -181,7 +181,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='nWHF-0' random-id='e0d73109-ceba-9a19-2a5e-0ce1bfc7af33'><marimo-text-area data-initial-value='&quot;NONCONFORMANCE REPORT NCR-2026-0412&#92;nLine 3, Final Assembly. Raised 2026-08-19 by K. Osei (Quality Inspector II).&#92;n&#92;nDuring receipt inspection of safety-critical valve assemblies (PO 4500-11872,&#92;nsupplier Halstead Flow Systems), 3 of 12 assemblies were found with material&#92;ncertifications that do not match the heat numbers stamped on the bodies.&#92;nAffected tags: V-1104A, V-1104C, V-1106B.&#92;n&#92;nApplicable requirements: ISO 9001:2015 Clause 8.7; AS9100D Clause 8.7.1.&#92;nProcedure QA-PROC-208 Rev 5 governs disposition.&#92;n&#92;nDisposition: USE-AS-IS rejected. Recommended REWORK pending supplier re-certification.&#92;nSupplier notified 2026-08-20. Engineering evaluation ER-2026-0155 opened.&#92;nSafety significance: none identified pending evaluation. Status: OPEN.&#92;nTarget closure 2026-09-30.&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eSource document&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-placeholder='&quot;&quot;' data-disabled='false' data-debounce='true' data-full-width='true' data-rows='14'></marimo-text-area></marimo-ui-element><marimo-ui-element object-id='nWHF-1' random-id='ae18498f-2078-81f6-42d0-38448f46d813'><marimo-radio data-initial-value='&quot;As written (the obvious instruction)&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eExtraction instruction&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;As written (the obvious instruction)&quot;,&quot;Negation-aware (after evaluating)&quot;]' data-inline='false' data-disabled='false'></marimo-radio></marimo-ui-element><marimo-ui-element object-id='nWHF-2' random-id='bcea12bf-5c30-ac3c-008f-6b8ca67db51f'><marimo-button data-initial-value='0' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eExtract to JSON&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='nWHF-0' random-id='9c94f8f2-4dbf-3203-a033-d6d55e3ae750'><marimo-text-area data-initial-value='&quot;NONCONFORMANCE REPORT NCR-2026-0412&#92;nLine 3, Final Assembly. Raised 2026-08-19 by K. Osei (Quality Inspector II).&#92;n&#92;nDuring receipt inspection of safety-critical valve assemblies (PO 4500-11872,&#92;nsupplier Halstead Flow Systems), 3 of 12 assemblies were found with material&#92;ncertifications that do not match the heat numbers stamped on the bodies.&#92;nAffected tags: V-1104A, V-1104C, V-1106B.&#92;n&#92;nApplicable requirements: ISO 9001:2015 Clause 8.7; AS9100D Clause 8.7.1.&#92;nProcedure QA-PROC-208 Rev 5 governs disposition.&#92;n&#92;nDisposition: USE-AS-IS rejected. Recommended REWORK pending supplier re-certification.&#92;nSupplier notified 2026-08-20. Engineering evaluation ER-2026-0155 opened.&#92;nSafety significance: none identified pending evaluation. Status: OPEN.&#92;nTarget closure 2026-09-30.&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eSource document&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-placeholder='&quot;&quot;' data-disabled='false' data-debounce='true' data-full-width='true' data-rows='14'></marimo-text-area></marimo-ui-element><marimo-ui-element object-id='nWHF-1' random-id='2ea2108e-f4cc-7e5d-3223-28f6b0e30237'><marimo-radio data-initial-value='&quot;As written (the obvious instruction)&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eExtraction instruction&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;As written (the obvious instruction)&quot;,&quot;Negation-aware (after evaluating)&quot;]' data-inline='false' data-disabled='false'></marimo-radio></marimo-ui-element><marimo-ui-element object-id='nWHF-2' random-id='d153470c-13dc-422b-c594-62c344254a14'><marimo-button data-initial-value='0' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eExtract to JSON&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div>"
           }
         }
       ],
@@ -189,25 +189,25 @@
     },
     {
       "id": "iLit",
-      "code_hash": "4677eca1b29f720acabd17b319042198",
+      "code_hash": "62dc1a6d8faf042287e16ed91dfc5e51",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>Press <strong>Extract to JSON</strong>.</em></span></span>"
-          }
+          "type": "error",
+          "ename": "ancestor-stopped",
+          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
+          "traceback": []
         }
       ],
       "console": []
     },
     {
       "id": "ZHCJ",
-      "code_hash": "56a710e6f46333fc70166ab8e4e46b0c",
+      "code_hash": "244aa5099061e479c648b6eab36ada6b",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"the-schema-guarantees-the-shape-it-does-not-guarantee-the-truth\">The schema guarantees the shape. It does not guarantee the truth.</h3>\n<span class=\"paragraph\">That miss is not a bug and it is not a bad model \u2014 it is the actual failure mode of extraction on quality and compliance documents, and it is worth thirty seconds of your attention because <strong>the JSON was perfectly valid while being wrong</strong>. Nothing downstream would have flagged it. A dashboard would have shown a clean row.</span>\n<span class=\"paragraph\">The document says the disposition was <em>rejected</em> and something else recommended. The obvious instruction \u2014 \"extract exactly as written\" \u2014 walks straight into it, deterministically, every single time.</span>\n<span class=\"paragraph\">Now switch the instruction to <strong>Negation-aware</strong> above and re-run. Same model, same schema, same document; correct answer, also every time.</span>\n<span class=\"paragraph\"><strong>The point of the whole exercise:</strong> the difference between those two prompts is not something you reason your way to at a whiteboard. You find it by <em>evaluating</em> \u2014 running both against a set of documents where you already know the answer, and measuring. That is what Weave is for, and it is why we would rather show you this than a slide where everything works.</span>\n<span class=\"paragraph\">The practical sequence for a regulated workload: label thirty documents by hand, make those the evaluation set, and let prompt and model changes compete against it. Then the number you report to an auditor has something behind it.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"the-schema-guarantees-the-shape-it-does-not-guarantee-the-truth\">The schema guarantees the shape. It does not guarantee the truth.</h3>\n<span class=\"paragraph\">That miss is not a bug and it is not a bad model. It is the actual failure mode of extraction on quality and compliance documents, and it is worth thirty seconds of your attention because <strong>the JSON was perfectly valid while being wrong</strong>. Nothing downstream would have flagged it. A dashboard would have shown a clean row.</span>\n<span class=\"paragraph\">The document says the disposition was <em>rejected</em> and something else recommended. The obvious instruction, \"extract exactly as written\", walks straight into it, deterministically, every single time.</span>\n<span class=\"paragraph\">Now switch the instruction to <strong>Negation-aware</strong> above and re-run. Same model, same schema, same document; correct answer, also every time.</span>\n<span class=\"paragraph\"><strong>The point of the whole exercise:</strong> the difference between those two prompts is not something you reason your way to at a whiteboard. You find it by <em>evaluating</em>: running both against a set of documents where you already know the answer, and measuring. That is what Weave is for, and it is why we would rather show you this than a slide where everything works.</span>\n<span class=\"paragraph\">The practical sequence for a regulated workload: label thirty documents by hand, make those the evaluation set, and let prompt and model changes compete against it. Then the number you report to an auditor has something behind it.</span></span>"
           }
         }
       ],
@@ -215,12 +215,12 @@
     },
     {
       "id": "ROlb",
-      "code_hash": "a8efd0b04ded095652d07e6728ce5c50",
+      "code_hash": "cbb4d6a5f422e23f89891376f496c45b",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"4-cost-and-latency-you-can-measure-yourself\">4. Cost and latency you can measure yourself</h2>\n<span class=\"paragraph\">You shouldn't have to take our pricing slide's word for your unit economics. Run your own prompt across a few models and read the numbers off your own workload.</span>\n<span class=\"paragraph\">This sends the same prompt to each selected model and reports tokens and wall-clock time. <strong>Per-token prices are published at <a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">the pricing page</a></strong> \u2014 multiply by your own volume rather than by ours.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"4-cost-and-latency-you-can-measure-yourself\">4. Cost and latency you can measure yourself</h2>\n<span class=\"paragraph\">You shouldn't have to take our pricing slide's word for your unit economics. Run your own prompt across a few models and read the numbers off your own workload.</span>\n<span class=\"paragraph\">This sends the same prompt to each selected model and reports tokens and wall-clock time. <strong>Per-token prices are published at <a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">the pricing page</a></strong>. Multiply by your own volume rather than by ours.</span></span>"
           }
         }
       ],
@@ -231,10 +231,10 @@
       "code_hash": "03a129e7d3a1902cc4715a48ae325c06",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='qnkX-0' random-id='1dd4acf2-b8c1-09c2-46a0-ee477d3297fc'><marimo-multiselect data-initial-value='[&quot;meta-llama/Llama-3.1-8B-Instruct&quot;,&quot;meta-llama/Llama-3.3-70B-Instruct&quot;,&quot;Qwen/Qwen3-235B-A22B-Instruct-2507&quot;]' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eModels to compare&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;JetBrains/Mellum2-12B-A2.5B-Instruct&quot;,&quot;MiniMaxAI/MiniMax-M3&quot;,&quot;OpenPipe/Qwen3-14B-Instruct&quot;,&quot;Qwen/Qwen3-235B-A22B-Instruct-2507&quot;,&quot;Qwen/Qwen3-30B-A3B-Instruct-2507&quot;,&quot;Qwen/Qwen3.5-35B-A3B&quot;,&quot;Qwen/Qwen3.6-27B&quot;,&quot;Qwen/Qwen3.6-35B-A3B&quot;,&quot;Qwen/Qwen3.8-27B&quot;,&quot;deepseek-ai/DeepSeek-V3.1&quot;,&quot;deepseek-ai/DeepSeek-V4-Flash&quot;,&quot;deepseek-ai/DeepSeek-V4-Flash-0731&quot;,&quot;deepseek-ai/DeepSeek-V4-Pro&quot;,&quot;deepseek-ai/DeepSeek-V4-Pro-0813&quot;,&quot;google/gemma-4-31B-it&quot;,&quot;ibm-granite/granite-4.1-8b&quot;,&quot;ibm-granite/granite-4.2-8b&quot;,&quot;meta-llama/Llama-3.1-70B-Instruct&quot;,&quot;meta-llama/Llama-3.1-8B-Instruct&quot;,&quot;meta-llama/Llama-3.3-70B-Instruct&quot;,&quot;moonshotai/Kimi-K2.6&quot;,&quot;moonshotai/Kimi-K2.7-Code&quot;,&quot;nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B&quot;,&quot;nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B&quot;,&quot;openai/gpt-oss-120b&quot;,&quot;openai/gpt-oss-20b&quot;,&quot;zai-org/GLM-5.2&quot;,&quot;zai-org/GLM-5.3-Flash&quot;]' data-full-width='false' data-disabled='false'></marimo-multiselect></marimo-ui-element><marimo-ui-element object-id='qnkX-1' random-id='e099744d-3933-42e1-ded8-b5aab73976cf'><marimo-text-area data-initial-value='&quot;Summarise, in three bullet points, what a quality team must verify before accepting a shipment of safety-critical components.&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ePrompt&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-placeholder='&quot;&quot;' data-disabled='false' data-debounce='true' data-full-width='true' data-rows='3'></marimo-text-area></marimo-ui-element><marimo-ui-element object-id='qnkX-2' random-id='f5097825-41d0-6998-4e4a-55c17e067b1c'><marimo-button data-initial-value='0' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eRun comparison&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div>"
-          }
+          "type": "error",
+          "ename": "ancestor-stopped",
+          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
+          "traceback": []
         }
       ],
       "console": []
@@ -244,22 +244,22 @@
       "code_hash": "3e712c01443bdda57b53b6e5f859cf5f",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>Press <strong>Run comparison</strong>.</em></span></span>"
-          }
+          "type": "error",
+          "ename": "ancestor-stopped",
+          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
+          "traceback": []
         }
       ],
       "console": []
     },
     {
       "id": "Vxnm",
-      "code_hash": "225be855958e456d3b06f2a8279c896a",
+      "code_hash": "c65cd1dc30aea269691a030d5cab3a5d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"5-the-same-code-moves-to-dedicated-capacity\">5. The same code moves to dedicated capacity</h2>\n<span class=\"paragraph\">This is the argument for starting on serverless rather than waiting.</span>\n<span class=\"paragraph\">When your volume justifies committed capacity \u2014 dedicated endpoints, your own model, predictable throughput \u2014 the migration is the <strong>two arguments you already changed</strong>. Not a rewrite, not a new SDK, not a re-architecture:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"c1\"># today \u2014 serverless, per-token, no commitment</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://api.inference.wandb.ai/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">api_key</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n\n<span class=\"c1\"># later \u2014 your own dedicated endpoint, same call sites</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://&lt;your-endpoint&gt;.inference.coreweave.com/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">api_key</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n</code></pre></div>\n<span class=\"paragraph\">Everything above this cell keeps working unchanged. That is the point: <strong>starting on serverless costs you nothing in rework</strong>, so the capacity conversation can take as long as it needs to take.</span>\n<h3 id=\"tracing-when-you-want-it\">Tracing, when you want it</h3>\n<span class=\"paragraph\">Every call can be logged to Weave for traces, cost attribution and evaluations by adding one header \u2014 no code change at the call site:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://api.inference.wandb.ai/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">api_key</span><span class=\"p\">,</span>\n    <span class=\"n\">default_headers</span><span class=\"o\">=</span><span class=\"p\">{</span><span class=\"s2\">\"OpenAI-Project\"</span><span class=\"p\">:</span> <span class=\"s2\">\"&lt;your-team&gt;/&lt;your-project&gt;\"</span><span class=\"p\">},</span>\n<span class=\"p\">)</span>\n</code></pre></div>\n<span class=\"paragraph\">Worth turning on early: it is how you answer \"which prompt change made this worse\" three months from now.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"5-the-same-code-moves-to-dedicated-capacity\">5. The same code moves to dedicated capacity</h2>\n<span class=\"paragraph\">This is the argument for starting on serverless rather than waiting.</span>\n<span class=\"paragraph\">When your volume justifies committed capacity (dedicated endpoints, your own model, predictable throughput), the migration is the <strong>two arguments you already changed</strong>. Not a rewrite, not a new SDK, not a re-architecture:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"c1\"># today: serverless, per-token, no commitment</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://api.inference.wandb.ai/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">api_key</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n\n<span class=\"c1\"># later: your own dedicated endpoint, same call sites</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://&lt;your-endpoint&gt;.inference.coreweave.com/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">api_key</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n</code></pre></div>\n<span class=\"paragraph\">Everything above this cell keeps working unchanged. That is the point: <strong>starting on serverless costs you nothing in rework</strong>, so the capacity conversation can take as long as it needs to take.</span>\n<h3 id=\"tracing\">Tracing</h3>\n<span class=\"paragraph\">If you filled in the team and project at the top, every call in this notebook has already been logged to Weave, where you can see traces, token costs and evaluations. It is one header, with no change at the call site:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://api.inference.wandb.ai/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">api_key</span><span class=\"p\">,</span>\n    <span class=\"n\">default_headers</span><span class=\"o\">=</span><span class=\"p\">{</span><span class=\"s2\">\"OpenAI-Project\"</span><span class=\"p\">:</span> <span class=\"s2\">\"&lt;your-team&gt;/&lt;your-project&gt;\"</span><span class=\"p\">},</span>\n<span class=\"p\">)</span>\n</code></pre></div>\n<span class=\"paragraph\">Those traces are in your own project. Nothing from this notebook is reported anywhere else.</span>\n<span class=\"paragraph\">Worth turning on early: it is how you answer \"which prompt change made this worse\" three months from now.</span></span>"
           }
         }
       ],
@@ -267,12 +267,12 @@
     },
     {
       "id": "DnEU",
-      "code_hash": "23822c3d563475b8a04d3213a40ca68f",
+      "code_hash": "a6f33d48718fee9914b3dbffe4d84ff4",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"take-this-with-you\">Take this with you</h2>\n<span class=\"paragraph\">This notebook is a single Python file with its dependencies declared inline. To run it anywhere:</span>\n<div class=\"language-sh codehilite\"><pre><span></span><code><span class=\"nb\">export</span><span class=\"w\"> </span><span class=\"nv\">WANDB_API_KEY</span><span class=\"o\">=</span><span class=\"s2\">\"&lt;your key from wandb.ai/authorize&gt;\"</span>\nuvx<span class=\"w\"> </span>marimo<span class=\"w\"> </span>edit<span class=\"w\"> </span>--sandbox<span class=\"w\"> </span>cw_inference_first_run.py\n</code></pre></div>\n<span class=\"paragraph\"><code>--sandbox</code> reads the dependency list from the top of this file and builds its own environment, so there is nothing to install and nothing to conflict with what you already have. (<code>uv run cw_inference_first_run.py</code> also works, but runs it headlessly as a plain script rather than opening the notebook.)</span>\n<ul>\n<li><strong>Keys</strong> \u2014 <a href=\"https://wandb.ai/authorize\" rel=\"noopener noreferrer\" target=\"_blank\">wandb.ai/authorize</a></li>\n<li><strong>Model catalog and pricing</strong> \u2014 <a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">wandb.ai/site/pricing/inference</a></li>\n<li><strong>API reference</strong> \u2014 OpenAI-compatible; anything the OpenAI Python client does, this endpoint does</li>\n</ul>\n<span class=\"paragraph\"><strong>Known limit, so you hear it from us first:</strong> Serverless Inference is <strong>text-to-text only</strong> today. If part of your workload is images, scanned drawings or PDFs-as-images, that part does not run here yet \u2014 tell us and we will scope it properly rather than let you discover it in week three.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"take-this-with-you\">Take this with you</h2>\n<span class=\"paragraph\">This notebook is a single Python file with its dependencies declared inline. To run it anywhere:</span>\n<div class=\"language-sh codehilite\"><pre><span></span><code>uvx<span class=\"w\"> </span>marimo<span class=\"w\"> </span>edit<span class=\"w\"> </span>--sandbox<span class=\"w\"> </span>cw_inference_first_run.py\n</code></pre></div>\n<span class=\"paragraph\">Your credentials go in the form at the top, so there is nothing to export and no key stored in the file.</span>\n<span class=\"paragraph\"><code>--sandbox</code> reads the dependency list from the top of this file and builds its own environment, so there is nothing to install and nothing to conflict with what you already have. (<code>uv run cw_inference_first_run.py</code> also works, but runs it headlessly as a plain script rather than opening the notebook.)</span>\n<ul>\n<li><strong>Keys</strong>: <a href=\"https://wandb.ai/authorize\" rel=\"noopener noreferrer\" target=\"_blank\">wandb.ai/authorize</a></li>\n<li><strong>Model catalog and pricing</strong>: <a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">wandb.ai/site/pricing/inference</a></li>\n<li><strong>API reference</strong>: OpenAI-compatible, anything the OpenAI Python client does, this endpoint does</li>\n</ul>\n<span class=\"paragraph\"><strong>Known limit, so you hear it from us first:</strong> Serverless Inference is <strong>text-to-text only</strong> today. If part of your workload is images, scanned drawings or PDFs-as-images, that part does not run here yet. Tell us and we will scope it properly rather than let you discover it in week three.</span></span>"
           }
         }
       ],
