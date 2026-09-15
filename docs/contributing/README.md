@@ -14,7 +14,7 @@ This repo is public and read by customers. Before anything else, read [ADR-0001]
 
 ## The header cell
 
-Every notebook opens with the same header ([ADR-0009](../adr/0009-header-is-plain-markdown.md)): a CoreWeave wordmark, the title, and a "Read more" link to the product page. **Plain markdown, deliberately.** It renders identically in the editor, in app mode, in slide mode and in a molab preview, with nothing to verify per surface.
+Every notebook opens with the same header ([ADR-0009](../adr/0009-header-is-plain-markdown.md)): a CoreWeave wordmark, the title, and links to the product page, the model catalog and pricing. **Plain markdown, deliberately.** It renders identically in the editor, in app mode, in slide mode and in a molab preview, with nothing to verify per surface.
 
 Set the app title alongside the width:
 
@@ -29,14 +29,16 @@ Then, as the first cell after the `import marimo as mo` cell:
 def _(mo):
     # Standard CoreWeave notebook header. See docs/adr/0009. Plain markdown,
     # so it renders the same in the editor, in app mode and in slide mode.
-    # Copy verbatim into a new notebook; change only the title line and link.
+    # Copy verbatim into a new notebook; change only the title line and links.
     mo.md(
         """
         <img src="https://cdn.prod.website-files.com/62ba1fb86485b6d5029975c4/69de8e8600c3f18e49d4bf47_logo.svg" width="360" alt="CoreWeave" />
 
         # Serverless Inference: first run
 
-        [Read more &#8594;](https://coreweave.com/products/serverless-inference)
+        [Read more &#8594;](https://coreweave.com/products/serverless-inference) &nbsp;&middot;&nbsp;
+        [Model catalog](https://wandb.ai/inference) &nbsp;&middot;&nbsp;
+        [Pricing](https://wandb.ai/site/pricing/inference)
         """
     )
     return
