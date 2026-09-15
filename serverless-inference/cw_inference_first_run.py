@@ -505,11 +505,11 @@ def _(mo):
         ```python
         # @weave.op logs whatever the function returns as the call's output
         @weave.op
-        def ask(prompt: str, model: str) -> dict:
+        def ask(prompt: str, model: str, max_tokens: int) -> dict:
             resp = client.chat.completions.create(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=600,
+                max_tokens=max_tokens,
             )
             message = resp.choices[0].message
             # both at the top level, so Weave shows them as output.content
@@ -521,9 +521,122 @@ def _(mo):
         ```
 
         In the traces table, add `output.reasoning` through the column manager. Filtering it on "is not empty" finds the calls that spent their budget thinking. Column paths take dots for keys and square brackets for list indices, so on the untouched OpenAI call the same field is `output.choices[0].message.reasoning`.
+
+        The widget below runs that exact op, so the call it logs is the code above. The dropdown lists only reasoning models, since they are the ones with a `reasoning` field to show.
         """
     )
     return
+
+
+@app.cell(hide_code=True)
+def _(mo, models):
+    # Known reasoning models, then any catalog id whose name marks it as one,
+    # so a model added after this notebook was written still appears here.
+    _known = [
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+        "deepseek-ai/DeepSeek-R1-0528",
+        "Qwen/Qwen3-235B-A22B-Thinking-2507",
+    ]
+    _hints = ("gpt-oss", "-r1", "deepseek-r1", "thinking", "qwq")
+    _options = [m for m in _known if m in models] + [
+        m
+        for m in models
+        if m not in _known and any(h in m.lower() for h in _hints)
+    ]
+
+    mo.stop(
+        not _options,
+        mo.md(
+            "No model in the catalog matched the reasoning list above. Pick one "
+            "from section 2 instead, or add its id to `_known`."
+        ).callout(kind="warn"),
+    )
+
+    reason_picker = mo.ui.dropdown(options=_options, value=_options[0], label="Model")
+    reason_max_tokens = mo.ui.number(
+        start=1, stop=8000, step=50, value=1200, label="max_tokens"
+    )
+    reason_prompt = mo.ui.text_area(
+        value=(
+            "A supplier's certificate reports a yield strength 8% below the "
+            "purchase order spec, but the shipment passed incoming inspection. "
+            "Should it be accepted? Reason it through."
+        ),
+        label="Prompt",
+        rows=3,
+        full_width=True,
+    )
+    reason_button = mo.ui.run_button(label="Send")
+
+    mo.vstack(
+        [
+            mo.hstack([reason_picker, reason_max_tokens], justify="start", gap=2),
+            reason_prompt,
+            reason_button,
+        ]
+    )
+    return reason_button, reason_max_tokens, reason_picker, reason_prompt
+
+
+@app.cell(hide_code=True)
+def _(
+    client,
+    mo,
+    reason_button,
+    reason_max_tokens,
+    reason_picker,
+    reason_prompt,
+    tracing_on,
+    weave,
+):
+    mo.stop(not reason_button.value)
+    mo.stop(
+        not tracing_on,
+        mo.md(
+            "Fill in a team and a project in the form at the top, so this call "
+            "has somewhere to log to."
+        ).callout(kind="warn"),
+    )
+
+    # The op from the example above, verbatim.
+    @weave.op
+    def ask(prompt: str, model: str, max_tokens: int) -> dict:
+        resp = client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=max_tokens,
+        )
+        message = resp.choices[0].message
+        return {
+            "content": message.content,
+            "reasoning": getattr(message, "reasoning", None),
+        }
+
+    _result = ask(
+        reason_prompt.value,
+        reason_picker.value,
+        int(reason_max_tokens.value),
+    )
+    _content = _result["content"] or ""
+    _reasoning = _result["reasoning"]
+
+    _body = [
+        mo.md(f"**{reason_picker.value}** &middot; logged to Weave as `ask`"),
+        mo.md(_content if _content.strip() else "_(empty, the budget went to reasoning)_"),
+    ]
+    if _reasoning:
+        _body.append(mo.accordion({"`output.reasoning`": mo.md(_reasoning)}))
+    else:
+        _body.append(
+            mo.md(
+                "_This model returned no `reasoning` field, so `output.reasoning` "
+                "is empty on the trace._"
+            ).callout(kind="warn")
+        )
+
+    mo.vstack(_body)
+    return (ask,)
 
 
 @app.cell(hide_code=True)
