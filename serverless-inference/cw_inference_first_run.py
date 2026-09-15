@@ -52,7 +52,7 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-        Open-weight models behind an OpenAI-compatible endpoint, billed per token, with no capacity commitment. The API is the OpenAI API with a different base URL and key.
+        Open-weight models behind an OpenAI-compatible endpoint, billed per token. The API is the OpenAI API with a different base URL and key.
         """
     )
     return
@@ -402,7 +402,7 @@ def _(mo):
         ```python
         WANDB_API_KEY = os.environ["WANDB_API_KEY"]
 
-        # today: serverless, per-token, no commitment
+        # today: serverless, per-token
         client = OpenAI(
             base_url="https://api.inference.wandb.ai/v1",
             api_key=WANDB_API_KEY,

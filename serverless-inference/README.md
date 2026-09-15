@@ -2,7 +2,7 @@
 
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/ijdoc/cw-notebooks/blob/main/serverless-inference/cw_inference_first_run.py)
 
-Open-weight models behind an OpenAI-compatible endpoint, billed per token, with no capacity commitment and nothing to provision. Five sections, roughly two minutes each.
+Open-weight models behind an OpenAI-compatible endpoint, billed per token. Five sections, roughly two minutes each.
 
 ```sh
 export WANDB_API_KEY="<your key from wandb.ai/authorize>"
