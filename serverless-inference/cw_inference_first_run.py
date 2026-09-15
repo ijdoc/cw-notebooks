@@ -497,6 +497,30 @@ def _(mo):
         ```sh
         pip install weave
         ```
+
+        ### Put the reasoning in its own column
+
+        A reasoning model returns its thinking in `choices[0].message.reasoning`, buried three levels into the response. Wrap the call in a `weave.op` and return that field at the top level, and it becomes a column of its own:
+
+        ```python
+        # @weave.op logs whatever the function returns as the call's output
+        @weave.op
+        def ask(prompt: str, model: str) -> dict:
+            resp = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=600,
+            )
+            message = resp.choices[0].message
+            # both at the top level, so Weave shows them as output.content
+            # and output.reasoning rather than nested inside the response
+            return {
+                "content": message.content,
+                "reasoning": getattr(message, "reasoning", None),
+            }
+        ```
+
+        In the traces table, add `output.reasoning` through the column manager. Filtering it on "is not empty" finds the calls that spent their budget thinking. Column paths take dots for keys and square brackets for list indices, so on the untouched OpenAI call the same field is `output.choices[0].message.reasoning`.
         """
     )
     return
