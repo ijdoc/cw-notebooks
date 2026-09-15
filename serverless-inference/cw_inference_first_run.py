@@ -13,8 +13,6 @@ Open-weight models behind an OpenAI-compatible endpoint. Run it with:
 
 Dependencies are declared inline (PEP 723), so --sandbox resolves them itself.
 Credentials are entered in the notebook; nothing needs exporting.
-
-All example data in this notebook is synthetic, written for the demo.
 """
 
 import marimo
@@ -41,9 +39,9 @@ def _(mo):
 
         # Serverless Inference: first run
 
-        [Read more &#8594;](https://coreweave.com/products/serverless-inference) &nbsp;&middot;&nbsp;
         [Model catalog](https://wandb.ai/inference) &nbsp;&middot;&nbsp;
-        [Pricing](https://wandb.ai/site/pricing/inference)
+        [Pricing](https://wandb.ai/site/pricing/inference) &nbsp;&middot;&nbsp;
+        [Read more &#8594;](https://coreweave.com/products/serverless-inference)
         """
     )
     return
@@ -113,9 +111,7 @@ def _(mo):
                     mo.vstack(
                         [
                             UI_ENTITY,
-                            mo.md(
-                                "_The team's name (default team will be used when left blank)_"
-                            ),
+                            mo.md("_Both team and project are required for tracing_"),
                         ],
                         gap=0,
                     ),
@@ -140,20 +136,25 @@ def _(UI_API_KEY, UI_ENTITY, UI_PROJECT, mo):
     # Inference has its own endpoint, separate from the W&B base URL above.
     INFERENCE_BASE_URL = "https://api.inference.wandb.ai/v1"
 
-    # Tracing points at your own project. The header is only sent when both
-    # the team and the project are filled in.
     _entity = UI_ENTITY.value.strip()
     _project = UI_PROJECT.value.strip()
     tracing_on = bool(_entity and _project)
-    _headers = {"OpenAI-Project": f"{_entity}/{_project}"} if tracing_on else None
 
     client = OpenAI(
         base_url=INFERENCE_BASE_URL,
         api_key=UI_API_KEY.value,
-        default_headers=_headers,
+        # Team and project for usage tracking. Requires both parts.
+        project=f"{_entity}/{_project}" if tracing_on else None,
     )
 
-    mo.md(f"Connected to `{INFERENCE_BASE_URL}`").callout(kind="success")
+    mo.md(
+        f"Connected to `{INFERENCE_BASE_URL}`. "
+        + (
+            f"Usage is tracked under `{_entity}/{_project}`."
+            if tracing_on
+            else "**Tracking is off.** Fill in both team and project above to turn it on."
+        )
+    ).callout(kind="success" if tracing_on else "warn")
     return INFERENCE_BASE_URL, OpenAI, client, tracing_on
 
 
@@ -195,6 +196,16 @@ def _(mo):
         ## 2. Switch models
 
         Every model in the catalog takes the same request shape and returns the same response shape. Pick one and send a prompt.
+
+        /// admonition | Reasoning models need a larger max_tokens
+            type: warn
+
+        When using a reasoning model, allow enough tokens for the reasoning field *and* the reply. At least 600 is a reasonable floor, which is the default below.
+
+        Reasoning models spend tokens thinking before answering, and that thinking is returned in a separate `reasoning` field rather than in `content`. Set `max_tokens` too low and the budget is consumed by reasoning: `content` comes back empty with `finish_reason: "length"`. It is not an error, so nothing will flag it.
+
+        `openai/gpt-oss-120b` is a reasoning model. The dropdown is ordered non-reasoning-first.
+        ///
         """
     )
     return
@@ -202,8 +213,6 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo, models):
-    # Non-reasoning models first: they answer directly. See the note below the
-    # response about reasoning models and max_tokens.
     _preferred = [
         "meta-llama/Llama-3.3-70B-Instruct",
         "Qwen/Qwen3-235B-A22B-Instruct-2507",
@@ -230,8 +239,13 @@ def _(mo, models):
     )
     send_button = mo.ui.run_button(label="Send")
 
-    mo.vstack([mo.hstack([model_picker, max_tokens], justify="start", gap=2),
-               prompt_box, send_button])
+    mo.vstack(
+        [
+            mo.hstack([model_picker, max_tokens], justify="start", gap=2),
+            prompt_box,
+            send_button,
+        ]
+    )
     return max_tokens, model_picker, prompt_box, send_button
 
 
@@ -257,7 +271,7 @@ def _(client, max_tokens, mo, model_picker, prompt_box, send_button, time):
             f"{_resp.usage.completion_tokens} completion tokens &middot; "
             f"finish_reason `{_resp.choices[0].finish_reason}`"
         ),
-        mo.md(_content if _content.strip() else "_(empty, see the note below)_"),
+        mo.md(_content if _content.strip() else "_(empty, see the note above)_"),
     ]
     if _reasoning:
         _body.append(
@@ -272,165 +286,8 @@ def _(client, max_tokens, mo, model_picker, prompt_box, send_button, time):
 def _(mo):
     mo.md(
         """
-        /// admonition | Reasoning models need a larger max_tokens
-            type: warn
-
-        When using a reasoning model, allow enough tokens for the reasoning field *and* the reply. At least 600 is a reasonable floor, which is the default above.
-
-        Reasoning models spend tokens thinking before answering, and that thinking is returned in a separate `reasoning` field rather than in `content`. Set `max_tokens` too low and the budget is consumed by reasoning: `content` comes back empty with `finish_reason: "length"`. It is not an error, so nothing will flag it.
-
-        `openai/gpt-oss-120b` is a reasoning model. The dropdown is ordered non-reasoning-first.
-        ///
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        """
         ---
-        ## 3. Extract structured data from a document
-
-        Given a JSON schema, the model returns JSON conforming to it. The schema is enforced during generation rather than requested in the prompt.
-
-        Below: a short report, and five fields to pull out of it. The text is synthetic, written for this demo. Replace it with your own and re-run.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    SAMPLE_DOC = """NONCONFORMANCE REPORT NCR-2026-0412
-Raised 2026-08-19 by K. Osei.
-
-3 of 12 valve assemblies from supplier Halstead Flow Systems arrived with material
-certifications that do not match the heat numbers stamped on the bodies.
-
-Disposition: USE-AS-IS rejected. REWORK recommended, pending supplier re-certification.
-Status: OPEN."""
-
-    SYSTEM_PROMPTS = {
-        "As written": (
-            "Extract fields from quality documents exactly as written. "
-            "Do not infer or normalise values that are not present."
-        ),
-        "Negation-aware": (
-            "Extract fields from quality documents. Attend carefully to negation and to "
-            "rejected or superseded values: if a value is stated then rejected, the correct "
-            "answer is the value that stands, not the rejected one."
-        ),
-    }
-    doc_box = mo.ui.text_area(
-        value=SAMPLE_DOC, label="Source document", rows=9, full_width=True
-    )
-    prompt_picker = mo.ui.radio(
-        options=list(SYSTEM_PROMPTS),
-        value="As written",
-        label="Extraction instruction",
-    )
-    extract_button = mo.ui.run_button(label="Extract to JSON")
-
-    mo.vstack([doc_box, prompt_picker, extract_button])
-    return SYSTEM_PROMPTS, doc_box, extract_button, prompt_picker
-
-
-@app.cell
-def _(SYSTEM_PROMPTS, client, doc_box, extract_button, mo, prompt_picker):
-    import json
-
-    mo.stop(not extract_button.value)
-
-    NCR_SCHEMA = {
-        "type": "object",
-        "properties": {
-            "report_id": {"type": "string"},
-            "supplier": {"type": "string"},
-            "quantity_affected": {"type": "integer"},
-            "disposition": {
-                "type": "string",
-                "enum": ["USE_AS_IS", "REWORK", "REPAIR", "SCRAP"],
-            },
-            "status": {"type": "string", "enum": ["OPEN", "CLOSED"]},
-        },
-        "required": [
-            "report_id",
-            "supplier",
-            "quantity_affected",
-            "disposition",
-            "status",
-        ],
-        "additionalProperties": False,
-    }
-
-    _resp = client.chat.completions.create(
-        model="meta-llama/Llama-3.3-70B-Instruct",
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPTS[prompt_picker.value]},
-            {"role": "user", "content": doc_box.value},
-        ],
-        response_format={
-            "type": "json_schema",
-            "json_schema": {"name": "ncr", "strict": True, "schema": NCR_SCHEMA},
-        },
-        max_tokens=600,
-        temperature=0,
-    )
-
-    extracted = json.loads(_resp.choices[0].message.content)
-
-    # The document rejects USE-AS-IS and recommends REWORK. Checked here rather
-    # than left to the eye, so the notebook says it either way.
-    _disp = extracted.get("disposition")
-    _verdict = (
-        mo.md(f"`disposition` is **{_disp}**, which matches the document.").callout(
-            kind="success"
-        )
-        if _disp == "REWORK"
-        else mo.md(
-            f"`disposition` is **{_disp}**. The document rejects USE-AS-IS and "
-            "recommends REWORK, so this value is wrong. The JSON is still valid "
-            "against the schema."
-        ).callout(kind="danger")
-    )
-
-    mo.vstack(
-        [
-            mo.md(
-                f"Schema satisfied &middot; {_resp.usage.total_tokens} tokens "
-                "&middot; `temperature=0`"
-            ),
-            mo.json(extracted),
-            _verdict,
-        ]
-    )
-    return NCR_SCHEMA, extracted, json
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        """
-        ### The schema constrains the shape, not the content
-
-        The document states that USE-AS-IS was **rejected** and REWORK recommended. The default instruction, "extract exactly as written", returns `USE_AS_IS`. The JSON is valid against the schema and the value is wrong, so no downstream validation would catch it.
-
-        Switch the instruction to **Negation-aware** above and re-run. Same model, same schema, same document, correct answer. Both results are deterministic at `temperature=0`.
-
-        Which of the two prompts is correct is established by testing them against documents whose answers are already known, not by reading them. That is what an evaluation set is for: label a sample by hand, then measure prompt and model changes against it. Weave runs and tracks those evaluations.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        """
-        ---
-        ## 4. Compare cost and latency
+        ## 3. Compare cost and latency
 
         This sends the same prompt to each selected model and reports token counts and wall-clock time. Per-token prices are on the [pricing page](https://wandb.ai/site/pricing/inference).
         """
@@ -516,7 +373,7 @@ def _(mo):
     mo.md(
         """
         ---
-        ## 5. Move to dedicated capacity
+        ## 4. Move to dedicated capacity
 
         Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Moving to it means changing the base URL:
 
@@ -527,12 +384,14 @@ def _(mo):
         client = OpenAI(
             base_url="https://api.inference.wandb.ai/v1",
             api_key=WANDB_API_KEY,
+            project="<team>/<project>",
         )
 
         # later: your own dedicated endpoint, same call sites
         client = OpenAI(
             base_url="https://<your-endpoint>.inference.coreweave.com/v1",
             api_key=WANDB_API_KEY,
+            project="<team>/<project>",
         )
         ```
 
@@ -556,23 +415,10 @@ def _(UI_BASE_URL, UI_ENTITY, UI_PROJECT, mo, tracing_on):
         + (
             f"Calls from this notebook are logged to Weave under `{_entity}/{_project}`, "
             f"with traces, token counts and costs.\n\n"
-            f"[See traces &#8594;]({_app}/{_entity}/{_project}/weave/traces)\n\n"
-            "Traces go to your project only. Nothing from this notebook is reported "
-            "anywhere else."
+            f"[See traces &#8594;]({_app}/{_entity}/{_project}/weave/traces)"
             if tracing_on
             else "Enter a team and a project in the form at the top to log calls to Weave."
         )
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        """
-        ---
-        **Limit:** Serverless Inference is text-to-text only. Images, scanned documents and PDFs-as-images are not supported.
-        """
     )
     return
 

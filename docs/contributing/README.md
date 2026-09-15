@@ -14,7 +14,7 @@ This repo is public and read by customers. Before anything else, read [ADR-0001]
 
 ## The header cell
 
-Every notebook opens with the same header ([ADR-0009](../adr/0009-header-is-plain-markdown.md)): a CoreWeave wordmark, the title, and links to the product page, the model catalog and pricing. **Plain markdown, deliberately.** It renders identically in the editor, in app mode, in slide mode and in a molab preview, with nothing to verify per surface.
+Every notebook opens with the same header ([ADR-0009](../adr/0009-header-is-plain-markdown.md)): a CoreWeave wordmark, the title, and links to the model catalog, pricing and the product page. **Plain markdown, deliberately.** It renders identically in the editor, in app mode, in slide mode and in a molab preview, with nothing to verify per surface.
 
 Set the app title alongside the width:
 
@@ -36,9 +36,9 @@ def _(mo):
 
         # Serverless Inference: first run
 
-        [Read more &#8594;](https://coreweave.com/products/serverless-inference) &nbsp;&middot;&nbsp;
         [Model catalog](https://wandb.ai/inference) &nbsp;&middot;&nbsp;
-        [Pricing](https://wandb.ai/site/pricing/inference)
+        [Pricing](https://wandb.ai/site/pricing/inference) &nbsp;&middot;&nbsp;
+        [Read more &#8594;](https://coreweave.com/products/serverless-inference)
         """
     )
     return
@@ -54,7 +54,7 @@ The header is **copied, not imported** ([ADR-0002](../adr/0002-one-directory-per
 
 Gate everything downstream on the key with `mo.stop`, so a reader who has not filled the form sees a prompt rather than a stack trace.
 
-Where a notebook traces to Weave, the entity and project come from that form and the `OpenAI-Project` header is only sent when both are filled. **Traces land in the reader's own project and nowhere else** ([ADR-0001](../adr/0001-no-customer-or-private-information-ever.md)). Say so in the notebook.
+Where a notebook traces to Weave, pass `project="<team>/<project>"` to the `OpenAI` client, built from the entity and project in the form. Both parts are required, so report the tracking status in the connection callout at the top rather than leaving the reader to discover at the bottom that nothing was logged. **Traces land in the reader's own project and nowhere else** ([ADR-0001](../adr/0001-no-customer-or-private-information-ever.md)). Say so in the notebook.
 
 Two things follow from collecting credentials in the UI. The key is never written to the file and never appears in a committed session snapshot, which is the point. But a headless `marimo export session` has no key either, so a gated notebook produces a thin preview showing only the form. That is the accepted trade against [ADR-0005](../adr/0005-commit-session-snapshots-for-molab-previews.md).
 

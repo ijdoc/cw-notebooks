@@ -20,12 +20,12 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "13267a0632649b4dcc77fe1edd740655",
+      "code_hash": "7c701793459ff347be7f0bd1c606ba77",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><img src=\"https://cdn.prod.website-files.com/62ba1fb86485b6d5029975c4/69de8e8600c3f18e49d4bf47_logo.svg\" width=\"360\" alt=\"CoreWeave\" /></span>\n<h1 id=\"serverless-inference-first-run\">Serverless Inference: first run</h1>\n<span class=\"paragraph\"><a href=\"https://coreweave.com/products/serverless-inference\" rel=\"noopener noreferrer\" target=\"_blank\">Read more &#8594;</a> &nbsp;&middot;&nbsp;\n<a href=\"https://wandb.ai/inference\" rel=\"noopener noreferrer\" target=\"_blank\">Model catalog</a> &nbsp;&middot;&nbsp;\n<a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">Pricing</a></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><img src=\"https://cdn.prod.website-files.com/62ba1fb86485b6d5029975c4/69de8e8600c3f18e49d4bf47_logo.svg\" width=\"360\" alt=\"CoreWeave\" /></span>\n<h1 id=\"serverless-inference-first-run\">Serverless Inference: first run</h1>\n<span class=\"paragraph\"><a href=\"https://wandb.ai/inference\" rel=\"noopener noreferrer\" target=\"_blank\">Model catalog</a> &nbsp;&middot;&nbsp;\n<a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">Pricing</a> &nbsp;&middot;&nbsp;\n<a href=\"https://coreweave.com/products/serverless-inference\" rel=\"noopener noreferrer\" target=\"_blank\">Read more &#8594;</a></span></span>"
           }
         }
       ],
@@ -46,12 +46,12 @@
     },
     {
       "id": "bkHC",
-      "code_hash": "e34d8eb4f348f2a5771d8a5ed044e3a7",
+      "code_hash": "af56658aa2c52036ff78c0a22db53db1",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-callout-output data-html='&quot;&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 1rem&#x27;&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e\ud83d\udd12 Enter your W&amp;amp;B credentials, and project settings.&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 2rem&#x27;&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-0&#x27; random-id=&#x27;f20eec67-254b-570f-1c70-1810ab8a4125&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;https://api.wandb.ai&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_BASE_URL&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;https://api.wandb.ai&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eDedicated and on-prem customers will need to modify &#92;u003ccode&#92;u003eUI_BASE_URL&#92;u003c/code&#92;u003e to match their custom domain&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-1&#x27; random-id=&#x27;035648fa-a247-0b64-caf4-f7df70126e99&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_API_KEY&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;********&amp;quot;&#x27; data-kind=&#x27;&amp;quot;password&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eDon&#x27;t have a &#92;u003ccode&#92;u003eWANDB_API_KEY&#92;u003c/code&#92;u003e? &#92;u003ca href=&#92;&quot;https://wandb.ai/authorize&#92;&quot; rel=&#92;&quot;noopener noreferrer&#92;&quot; target=&#92;&quot;_blank&#92;&quot;&#92;u003eCreate one here&#92;u003c/a&#92;u003e&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 2rem&#x27;&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-2&#x27; random-id=&#x27;a574aef1-8d0c-6ea7-7d10-9e6bebbd9036&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_ENTITY&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;my_awesome_team&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eThe team&#x27;s name (default team will be used when left blank)&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;flex: 1&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-3&#x27; random-id=&#x27;fb5f9b79-3bd8-357e-e022-9dde09e717b2&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;cw-inference-first-run&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_PROJECT&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;my_awesome_project&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&quot;' data-kind='&quot;neutral&quot;'></marimo-callout-output>"
+            "text/html": "<marimo-callout-output data-html='&quot;&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 1rem&#x27;&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e\ud83d\udd12 Enter your W&amp;amp;B credentials, and project settings.&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 2rem&#x27;&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-0&#x27; random-id=&#x27;ea529f9f-cea5-eeff-de45-2cc24df4324e&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;https://api.wandb.ai&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_BASE_URL&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;https://api.wandb.ai&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eDedicated and on-prem customers will need to modify &#92;u003ccode&#92;u003eUI_BASE_URL&#92;u003c/code&#92;u003e to match their custom domain&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-1&#x27; random-id=&#x27;a048c05c-dae2-bddc-4b87-2cbea2c48353&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_API_KEY&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;********&amp;quot;&#x27; data-kind=&#x27;&amp;quot;password&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eDon&#x27;t have a &#92;u003ccode&#92;u003eWANDB_API_KEY&#92;u003c/code&#92;u003e? &#92;u003ca href=&#92;&quot;https://wandb.ai/authorize&#92;&quot; rel=&#92;&quot;noopener noreferrer&#92;&quot; target=&#92;&quot;_blank&#92;&quot;&#92;u003eCreate one here&#92;u003c/a&#92;u003e&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 2rem&#x27;&#92;u003e&#92;u003cdiv style=&#x27;flex: 1;display: flex;min-width: 0;min-height: 0&#x27;&#92;u003e&#92;u003cdiv style=&#x27;display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0rem&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-2&#x27; random-id=&#x27;b439ce89-d507-8a44-c6ed-8b74025a9507&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_ENTITY&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;my_awesome_team&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003e&#92;u003cem&#92;u003eBoth team and project are required for tracing&#92;u003c/em&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003cdiv style=&#x27;flex: 1&#x27;&#92;u003e&#92;u003cmarimo-ui-element object-id=&#x27;bkHC-3&#x27; random-id=&#x27;184848d4-2103-a419-2097-d6af4ef24436&#x27;&#92;u003e&#92;u003cmarimo-text data-initial-value=&#x27;&amp;quot;cw-inference-first-run&amp;quot;&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eWANDB_PROJECT&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-placeholder=&#x27;&amp;quot;my_awesome_project&amp;quot;&#x27; data-kind=&#x27;&amp;quot;text&amp;quot;&#x27; data-full-width=&#x27;true&#x27; data-disabled=&#x27;false&#x27; data-debounce=&#x27;true&#x27;&#92;u003e&#92;u003c/marimo-text&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&#92;u003c/div&#92;u003e&quot;' data-kind='&quot;neutral&quot;'></marimo-callout-output>"
           }
         }
       ],
@@ -59,7 +59,7 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "d8d002d18d4ac9c66d5646a0a5511f8b",
+      "code_hash": "84b76d91ac3fd3e444fb3a03979d920d",
       "outputs": [
         {
           "type": "data",
@@ -111,12 +111,12 @@
     },
     {
       "id": "BYtC",
-      "code_hash": "5fe9f91aa270491d217b09640c2b16d9",
+      "code_hash": "11d5106222c15d31776eb9994148a7ce",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"2-switch-models\">2. Switch models</h2>\n<span class=\"paragraph\">Every model in the catalog takes the same request shape and returns the same response shape. Pick one and send a prompt.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"2-switch-models\">2. Switch models</h2>\n<span class=\"paragraph\">Every model in the catalog takes the same request shape and returns the same response shape. Pick one and send a prompt.</span>\n<div class=\"admonition warn\">\n<span class=\"admonition-title\">Reasoning models need a larger max_tokens</span>\n<span class=\"paragraph\">When using a reasoning model, allow enough tokens for the reasoning field <em>and</em> the reply. At least 600 is a reasonable floor, which is the default below.</span>\n<span class=\"paragraph\">Reasoning models spend tokens thinking before answering, and that thinking is returned in a separate <code>reasoning</code> field rather than in <code>content</code>. Set <code>max_tokens</code> too low and the budget is consumed by reasoning: <code>content</code> comes back empty with <code>finish_reason: \"length\"</code>. It is not an error, so nothing will flag it.</span>\n<span class=\"paragraph\"><code>openai/gpt-oss-120b</code> is a reasoning model. The dropdown is ordered non-reasoning-first.</span>\n</div></span>"
           }
         }
       ],
@@ -124,7 +124,7 @@
     },
     {
       "id": "RGSE",
-      "code_hash": "74342dde5f3d7cf4602c54dad37a3127",
+      "code_hash": "6e7c564ae6cba0d5263b50b6e39982ff",
       "outputs": [
         {
           "type": "error",
@@ -137,7 +137,7 @@
     },
     {
       "id": "Kclp",
-      "code_hash": "326422c651e943287e0983c532b210cc",
+      "code_hash": "53fc7faa425a192c6b98771bd79aa245",
       "outputs": [
         {
           "type": "error",
@@ -150,12 +150,12 @@
     },
     {
       "id": "emfo",
-      "code_hash": "49c17abab666192824af9bd6e47ad5e1",
+      "code_hash": "0a7653a0a5fef0b1d2462c512314c45f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><div class=\"admonition warn\">\n<span class=\"admonition-title\">Reasoning models need a larger max_tokens</span>\n<span class=\"paragraph\">When using a reasoning model, allow enough tokens for the reasoning field <em>and</em> the reply. At least 600 is a reasonable floor, which is the default above.</span>\n<span class=\"paragraph\">Reasoning models spend tokens thinking before answering, and that thinking is returned in a separate <code>reasoning</code> field rather than in <code>content</code>. Set <code>max_tokens</code> too low and the budget is consumed by reasoning: <code>content</code> comes back empty with <code>finish_reason: \"length\"</code>. It is not an error, so nothing will flag it.</span>\n<span class=\"paragraph\"><code>openai/gpt-oss-120b</code> is a reasoning model. The dropdown is ordered non-reasoning-first.</span>\n</div></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"3-compare-cost-and-latency\">3. Compare cost and latency</h2>\n<span class=\"paragraph\">This sends the same prompt to each selected model and reports token counts and wall-clock time. Per-token prices are on the <a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">pricing page</a>.</span></span>"
           }
         }
       ],
@@ -163,71 +163,6 @@
     },
     {
       "id": "Hstk",
-      "code_hash": "65afb6e1600b20b7cd1ab2be0acf37af",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"3-extract-structured-data-from-a-document\">3. Extract structured data from a document</h2>\n<span class=\"paragraph\">Given a JSON schema, the model returns JSON conforming to it. The schema is enforced during generation rather than requested in the prompt.</span>\n<span class=\"paragraph\">Below: a short report, and five fields to pull out of it. The text is synthetic, written for this demo. Replace it with your own and re-run.</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "nWHF",
-      "code_hash": "2b44299994617c6c20ef863e5bbc6cfb",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='nWHF-0' random-id='0bd21e77-ab58-9f40-37c6-3ad04ff196a7'><marimo-text-area data-initial-value='&quot;NONCONFORMANCE REPORT NCR-2026-0412&#92;nRaised 2026-08-19 by K. Osei.&#92;n&#92;n3 of 12 valve assemblies from supplier Halstead Flow Systems arrived with material&#92;ncertifications that do not match the heat numbers stamped on the bodies.&#92;n&#92;nDisposition: USE-AS-IS rejected. REWORK recommended, pending supplier re-certification.&#92;nStatus: OPEN.&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eSource document&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-placeholder='&quot;&quot;' data-disabled='false' data-debounce='true' data-full-width='true' data-rows='9'></marimo-text-area></marimo-ui-element><marimo-ui-element object-id='nWHF-1' random-id='80fd20da-e186-363f-40ef-eeb48ed5b6d3'><marimo-radio data-initial-value='&quot;As written&quot;' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eExtraction instruction&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;As written&quot;,&quot;Negation-aware&quot;]' data-inline='false' data-disabled='false'></marimo-radio></marimo-ui-element><marimo-ui-element object-id='nWHF-2' random-id='14f9d5f7-35a4-ed19-bfd0-7ddb75dcdca9'><marimo-button data-initial-value='0' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eExtract to JSON&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "iLit",
-      "code_hash": "50fbfa39451bb6c7a197ee4465f15597",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "ancestor-stopped",
-          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ZHCJ",
-      "code_hash": "c50ec5d4b5dc85735aaa70e56d615a5d",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"the-schema-constrains-the-shape-not-the-content\">The schema constrains the shape, not the content</h3>\n<span class=\"paragraph\">The document states that USE-AS-IS was <strong>rejected</strong> and REWORK recommended. The default instruction, \"extract exactly as written\", returns <code>USE_AS_IS</code>. The JSON is valid against the schema and the value is wrong, so no downstream validation would catch it.</span>\n<span class=\"paragraph\">Switch the instruction to <strong>Negation-aware</strong> above and re-run. Same model, same schema, same document, correct answer. Both results are deterministic at <code>temperature=0</code>.</span>\n<span class=\"paragraph\">Which of the two prompts is correct is established by testing them against documents whose answers are already known, not by reading them. That is what an evaluation set is for: label a sample by hand, then measure prompt and model changes against it. Weave runs and tracks those evaluations.</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ROlb",
-      "code_hash": "825308aec2bafa07ffa02519ab100ed0",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"4-compare-cost-and-latency\">4. Compare cost and latency</h2>\n<span class=\"paragraph\">This sends the same prompt to each selected model and reports token counts and wall-clock time. Per-token prices are on the <a href=\"https://wandb.ai/site/pricing/inference\" rel=\"noopener noreferrer\" target=\"_blank\">pricing page</a>.</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "qnkX",
       "code_hash": "03a129e7d3a1902cc4715a48ae325c06",
       "outputs": [
         {
@@ -240,7 +175,7 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "nWHF",
       "code_hash": "85e5f47de0f5ef88a26fd1c6643e319d",
       "outputs": [
         {
@@ -253,40 +188,27 @@
       "console": []
     },
     {
-      "id": "Vxnm",
-      "code_hash": "dddfb64f8ca7be21c716e53a30aa8a85",
+      "id": "iLit",
+      "code_hash": "f8fe5f1132764a802b632ef69fed3295",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"5-move-to-dedicated-capacity\">5. Move to dedicated capacity</h2>\n<span class=\"paragraph\">Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Moving to it means changing the base URL:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"n\">WANDB_API_KEY</span> <span class=\"o\">=</span> <span class=\"n\">os</span><span class=\"o\">.</span><span class=\"n\">environ</span><span class=\"p\">[</span><span class=\"s2\">\"WANDB_API_KEY\"</span><span class=\"p\">]</span>\n\n<span class=\"c1\"># today: serverless, per-token, no commitment</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://api.inference.wandb.ai/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">WANDB_API_KEY</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n\n<span class=\"c1\"># later: your own dedicated endpoint, same call sites</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://&lt;your-endpoint&gt;.inference.coreweave.com/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">WANDB_API_KEY</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n</code></pre></div>\n<span class=\"paragraph\">The rest of the code is unchanged.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<h2 id=\"4-move-to-dedicated-capacity\">4. Move to dedicated capacity</h2>\n<span class=\"paragraph\">Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Moving to it means changing the base URL:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"n\">WANDB_API_KEY</span> <span class=\"o\">=</span> <span class=\"n\">os</span><span class=\"o\">.</span><span class=\"n\">environ</span><span class=\"p\">[</span><span class=\"s2\">\"WANDB_API_KEY\"</span><span class=\"p\">]</span>\n\n<span class=\"c1\"># today: serverless, per-token, no commitment</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://api.inference.wandb.ai/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">WANDB_API_KEY</span><span class=\"p\">,</span>\n    <span class=\"n\">project</span><span class=\"o\">=</span><span class=\"s2\">\"&lt;team&gt;/&lt;project&gt;\"</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n\n<span class=\"c1\"># later: your own dedicated endpoint, same call sites</span>\n<span class=\"n\">client</span> <span class=\"o\">=</span> <span class=\"n\">OpenAI</span><span class=\"p\">(</span>\n    <span class=\"n\">base_url</span><span class=\"o\">=</span><span class=\"s2\">\"https://&lt;your-endpoint&gt;.inference.coreweave.com/v1\"</span><span class=\"p\">,</span>\n    <span class=\"n\">api_key</span><span class=\"o\">=</span><span class=\"n\">WANDB_API_KEY</span><span class=\"p\">,</span>\n    <span class=\"n\">project</span><span class=\"o\">=</span><span class=\"s2\">\"&lt;team&gt;/&lt;project&gt;\"</span><span class=\"p\">,</span>\n<span class=\"p\">)</span>\n</code></pre></div>\n<span class=\"paragraph\">The rest of the code is unchanged.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "DnEU",
-      "code_hash": "8acabd72f978e258c61878c53819689f",
+      "id": "ZHCJ",
+      "code_hash": "a0580a452cd7672ed1b5bf618da66f68",
       "outputs": [
         {
           "type": "error",
           "ename": "ancestor-stopped",
           "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
           "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ulZA",
-      "code_hash": "fea9fe24d9a383c287cca410c1d2592d",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><hr />\n<span class=\"paragraph\"><strong>Limit:</strong> Serverless Inference is text-to-text only. Images, scanned documents and PDFs-as-images are not supported.</span></span>"
-          }
         }
       ],
       "console": []
