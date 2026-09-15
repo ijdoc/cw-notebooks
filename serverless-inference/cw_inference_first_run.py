@@ -98,7 +98,7 @@ def _(mo):
                         [
                             UI_API_KEY,
                             mo.md(
-                                "_Don't have an API key? "
+                                "_Don't have a `WANDB_API_KEY`? "
                                 "[Create one here](https://wandb.ai/authorize)_"
                             ),
                         ],
@@ -521,16 +521,18 @@ def _(mo):
         Dedicated Inference serves your own weights on dedicated GPU nodes, through the same OpenAI-compatible API. Moving to it means changing the base URL:
 
         ```python
+        WANDB_API_KEY = os.environ["WANDB_API_KEY"]
+
         # today: serverless, per-token, no commitment
         client = OpenAI(
             base_url="https://api.inference.wandb.ai/v1",
-            api_key=api_key,
+            api_key=WANDB_API_KEY,
         )
 
         # later: your own dedicated endpoint, same call sites
         client = OpenAI(
             base_url="https://<your-endpoint>.inference.coreweave.com/v1",
-            api_key=api_key,
+            api_key=WANDB_API_KEY,
         )
         ```
 
