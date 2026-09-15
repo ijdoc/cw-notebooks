@@ -27,7 +27,7 @@ Requires [uv](https://docs.astral.sh/uv/). Or click the molab badge and run it i
 
 ## Layout
 
-One directory per demo, each self-contained with its own `README.md` and no shared code — a notebook is delivered on its own, so it has to make sense on its own ([ADR-0002](docs/adr/0002-one-directory-per-demo.md)). The vocabulary is in [`CONTEXT.md`](CONTEXT.md); the decisions are in [`docs/adr/`](docs/adr/README.md).
+One directory per demo, each self-contained with its own `README.md` and no shared code — a notebook is delivered on its own, so it has to make sense on its own ([ADR-0002](docs/adr/0002-one-directory-per-demo.md)). The vocabulary is in [`CONTEXT.md`](CONTEXT.md), the decisions are in [`docs/adr/`](docs/adr/README.md), and [`docs/contributing/`](docs/contributing/README.md) has the header template and the checklist for adding one.
 
 ## Licence
 
